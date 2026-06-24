@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HabitTo | Profile &amp; Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-dim": "#d3daea",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#d3bbff",
+                "on-primary-container": "#ede0ff",
+                "secondary": "#575e70",
+                "primary-fixed-dim": "#d2bbff",
+                "inverse-on-surface": "#ebf1ff",
+                "on-surface": "#151c27",
+                "secondary-container": "#d9dff5",
+                "on-surface-variant": "#4a4455",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#ede1ff",
+                "tertiary-fixed": "#ebddff",
+                "on-primary-fixed-variant": "#5a00c6",
+                "on-error-container": "#93000a",
+                "tertiary-container": "#7c3de8",
+                "tertiary": "#6316cf",
+                "surface-bright": "#f9f9ff",
+                "surface": "#f9f9ff",
+                "primary": "#630ed4",
+                "on-primary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-background": "#151c27",
+                "surface-container-highest": "#dce2f3",
+                "outline-variant": "#ccc3d8",
+                "outline": "#7b7487",
+                "surface-container-high": "#e2e8f8",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#404758",
+                "primary-fixed": "#eaddff",
+                "on-primary-fixed": "#25005a",
+                "background": "#f9f9ff",
+                "primary-container": "#7c3aed",
+                "on-tertiary-fixed-variant": "#5b00c5",
+                "on-secondary-container": "#5c6274",
+                "error": "#ba1a1a",
+                "surface-variant": "#dce2f3",
+                "error-container": "#ffdad6",
+                "surface-container": "#e7eefe",
+                "on-secondary-fixed": "#141b2b",
+                "on-tertiary-fixed": "#250059",
+                "inverse-primary": "#d2bbff",
+                "surface-tint": "#732ee4",
+                "inverse-surface": "#2a313d",
+                "secondary-fixed": "#dce2f7",
+                "surface-container-low": "#f0f3ff",
+                "secondary-fixed-dim": "#c0c6db"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "md": "16px",
+                "xs": "4px",
+                "base": "4px",
+                "lg": "24px",
+                "sm": "8px",
+                "xl": "32px",
+                "gutter": "20px",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "display": ["Inter"],
+                "label-sm": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "label-md": ["Inter"],
+                "headline-sm": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "headline-sm": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container transition-colors duration-300">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-white/10 shadow-sm h-20 transition-all duration-300">
+    <div class="max-w-container-max mx-auto px-4 md:px-lg flex justify-between items-center h-full gap-md">
+        <div class="flex items-center">
+            <a class="font-display text-headline-sm font-bold text-primary dark:text-primary-fixed-dim" href="home.html">HabitTo</a>
+        </div>
+        <div class="flex items-center gap-md">
+            <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="home.html">Explore</a>
+            <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="trips.html">Trips</a>
+            <a class="font-body-md text-body-md text-primary border-b-2 border-primary font-semibold" href="profile.html">Dashboard</a>
+            <div class="flex items-center gap-sm border border-outline-variant rounded-full px-2 py-1 hover:shadow-md transition-shadow bg-surface-container-lowest cursor-pointer">
+                <span class="material-symbols-outlined text-on-surface-variant">menu</span>
+                <span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-28 pb-xl max-w-container-max mx-auto px-4 md:px-lg space-y-xl">
+    
+    <!-- Profile Grid Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-xl items-start">
+        
+        <!-- Left Side: User Bio and Identity (Col 1) -->
+        <div class="space-y-lg">
+            <!-- User card -->
+            <section class="bg-surface-container-low dark:bg-surface-container-lowest rounded-[1.5rem] p-lg border border-outline-variant/20 text-center">
+                <div class="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-md border-2 border-primary">
+                    <span class="material-symbols-outlined text-[64px] text-primary font-light">person</span>
+                </div>
+                <h2 id="user-fullname" class="font-display text-headline-sm mb-xs">User Name</h2>
+                <p id="user-email" class="text-on-surface-variant text-label-md mb-md">user@example.com</p>
+                <div class="inline-flex items-center gap-xs px-md py-xs rounded-full text-label-sm font-bold text-white bg-primary">
+                    <span class="material-symbols-outlined text-[16px]">military_tech</span>
+                    <span>Premium Member</span>
+                </div>
+            </section>
+
+            <!-- Identity verification -->
+            <section id="profile-identity-card" class="bg-surface-container-low dark:bg-surface-container-lowest rounded-[1.5rem] p-lg border border-outline-variant/20 space-y-sm">
+                <h3 class="font-headline-sm flex items-center gap-sm">
+                    <span id="identity-icon" class="material-symbols-outlined text-primary">verified_user</span>
+                    <span>Identity Status</span>
+                </h3>
+                <div id="identity-badge" class="px-md py-sm rounded-xl font-bold text-label-sm text-center">
+                    Verification Needed
+                </div>
+                <p id="identity-text" class="text-on-surface-variant text-label-sm leading-relaxed">
+                    Verify your identity to lock bookings and unlock host privileges.
+                </p>
+
+                <!-- Trigger upload -->
+                <div id="profile-id-uploader" class="pt-sm">
+                    <button onclick="triggerProfileIdUpload()" class="w-full bg-surface hover:bg-surface-container-high border border-outline text-on-surface font-semibold py-sm rounded-xl transition-colors text-label-md">
+                        Upload ID Document
+                    </button>
+                    <input type="file" id="profile-id-file" class="hidden" onchange="submitProfileIdVerify(this)"/>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Side: Owner Console / Dashboard (Col 2 & 3) -->
+        <div id="owner-dashboard" class="lg:col-span-2 space-y-xl">
+            <!-- Property listing creator -->
+            <section class="bg-surface-container-low dark:bg-surface-container-lowest rounded-[1.5rem] p-lg border border-outline-variant/20 space-y-md">
+                <h2 class="font-headline-sm">Create New Accommodation</h2>
+                <form onsubmit="handleCreateProperty(event)" class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-xs">Title</label>
+                        <input type="text" id="prop-create-title" class="w-full bg-surface border border-outline-variant rounded-xl px-md py-sm text-on-surface" required placeholder="e.g. Modern Glass Cabin"/>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-xs">City</label>
+                        <input type="text" id="prop-create-city" class="w-full bg-surface border border-outline-variant rounded-xl px-md py-sm text-on-surface" required placeholder="e.g. Oslo"/>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-xs">Nightly Rate (USD)</label>
+                        <input type="number" id="prop-create-rate" min="10" class="w-full bg-surface border border-outline-variant rounded-xl px-md py-sm text-on-surface" required placeholder="e.g. 150"/>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-xs">Category</label>
+                        <select id="prop-create-category" class="w-full bg-surface border border-outline-variant rounded-xl px-md py-sm text-on-surface">
+                            <option value="Apartments">Apartments</option>
+                            <option value="Houses">Houses</option>
+                            <option value="Rooms">Rooms</option>
+                            <option value="Cabins">Cabins</option>
+                            <option value="Luxury">Luxury</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="md:col-span-2 w-full bg-primary text-on-primary font-bold py-md rounded-xl hover:opacity-90 active:scale-95 transition-all shadow-md">
+                        List Accommodation
+                    </button>
+                </form>
+            </section>
+
+            <!-- Bookings report and statistics -->
+            <section class="bg-surface-container-low dark:bg-surface-container-lowest rounded-[1.5rem] p-lg border border-outline-variant/20 space-y-md">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md">
+                    <div>
+                        <h2 class="font-headline-sm">Reservations &amp; Bookings Report</h2>
+                        <p class="text-on-surface-variant text-label-sm">Track income and stays on your listed properties.</p>
+                    </div>
+                    
+                    <!-- Excel exporter link -->
+                    <button onclick="exportToExcel()" class="bg-green-600 text-white font-bold px-md py-sm rounded-xl hover:bg-green-700 transition-colors shadow-sm flex items-center gap-xs text-label-md shrink-0">
+                        <span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+                        <span>Export to Excel</span>
+                    </button>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-label-md">
+                        <thead>
+                            <tr class="border-b border-outline-variant/30 text-on-surface-variant uppercase text-[10px] font-bold">
+                                <th class="py-sm px-xs">Property</th>
+                                <th class="py-sm px-xs">Guest</th>
+                                <th class="py-sm px-xs">Dates</th>
+                                <th class="py-sm px-xs">Income</th>
+                                <th class="py-sm px-xs">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bookings-report-body" class="divide-y divide-outline-variant/20">
+                            <!-- Booking rows dynamically added -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</main>
+
+<script src="app.js"></script>
+<script>
+    function getIdentityStatus(userId) {
+        return localStorage.getItem(`habitto_identity_${userId}`) || 'NotStarted';
+    }
+
+    function setIdentityStatus(userId, status) {
+        localStorage.setItem(`habitto_identity_${userId}`, status);
+    }
+
+    async function initProfile() {
+        const user = Auth.getUser();
+        if (!user) {
+            alert("Inicia sesión para ingresar al perfil.");
+            window.location.href = "home.html";
+            return;
+        }
+
+        document.getElementById('user-fullname').textContent = user.fullName;
+        document.getElementById('user-email').textContent = user.email;
+
+        updateIdentityCardUI();
+
+        document.getElementById('owner-dashboard').classList.remove('hidden');
+        await renderBookingReport();
+    }
+
+    function updateIdentityCardUI() {
+        const user = Auth.getUser();
+        const status = getIdentityStatus(user.id);
+        const badge = document.getElementById('identity-badge');
+        const text = document.getElementById('identity-text');
+        const uploader = document.getElementById('profile-id-uploader');
+        const icon = document.getElementById('identity-icon');
+
+        if (status === 'Approved') {
+            badge.className = "px-md py-sm rounded-xl font-bold text-label-sm text-center bg-green-100 text-green-800 border border-green-200";
+            badge.textContent = "VERIFIED";
+            text.textContent = "Identity verified. You have full access to book and list accommodations.";
+            uploader.classList.add('hidden');
+            icon.className = "material-symbols-outlined text-green-600 filled-icon";
+            icon.textContent = "verified";
+        } else if (status === 'Pending') {
+            badge.className = "px-md py-sm rounded-xl font-bold text-label-sm text-center bg-amber-100 text-amber-800 border border-amber-200";
+            badge.textContent = "PENDING REVIEW";
+            text.textContent = "Your documents are currently being checked. Verification usually completes in 24 hours.";
+            uploader.classList.add('hidden');
+            icon.className = "material-symbols-outlined text-amber-500";
+            icon.textContent = "hourglass_empty";
+        } else {
+            badge.className = "px-md py-sm rounded-xl font-bold text-label-sm text-center bg-red-100 text-red-800 border border-red-200";
+            badge.textContent = status === 'Rejected' ? "REJECTED" : "UNVERIFIED";
+            text.textContent = status === 'Rejected'
+                ? "Identity check failed. Please re-upload a clean, high-resolution ID document."
+                : "Submit ID documentation to unlock accommodations reservation.";
+            uploader.classList.remove('hidden');
+            icon.className = "material-symbols-outlined text-red-500";
+            icon.textContent = "gpp_maybe";
+        }
+    }
+
+    function triggerProfileIdUpload() {
+        document.getElementById('profile-id-file').click();
+    }
+
+    async function submitProfileIdVerify(input) {
+        if (input.files && input.files[0]) {
+            const user = Auth.getUser();
+            setIdentityStatus(user.id, "Pending");
+            updateIdentityCardUI();
+
+            try {
+                await HabittoAPI.verifyIdentity(user.id, input.files[0]);
+                setIdentityStatus(user.id, "Approved");
+                updateIdentityCardUI();
+            } catch (e) {
+                setIdentityStatus(user.id, "Rejected");
+                updateIdentityCardUI();
+                alert('No se pudo verificar la identidad: ' + e.message);
+            }
+        }
+    }
+
+    async function renderBookingReport() {
+        const user = Auth.getUser();
+        const body = document.getElementById('bookings-report-body');
+        body.innerHTML = `<tr><td colspan="5" class="py-md text-center text-on-surface-variant">Loading report...</td></tr>`;
+
+        let rows = [];
+        try {
+            rows = await HabittoAPI.getReport(user.id);
+        } catch (e) {
+            body.innerHTML = `<tr><td colspan="5" class="py-md text-center text-error">Could not load report: ${e.message}</td></tr>`;
+            return;
+        }
+
+        body.innerHTML = '';
+
+        if (rows.length === 0) {
+            body.innerHTML = `<tr><td colspan="5" class="py-md text-center text-on-surface-variant italic">No reservations received yet.</td></tr>`;
+            return;
+        }
+
+        rows.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.className = "border-b border-outline-variant/10 text-on-surface";
+            tr.innerHTML = `
+                <td class="py-md px-xs font-semibold">${row.propertyTitle}</td>
+                <td class="py-md px-xs">
+                    <div>${row.guestFullName}</div>
+                    <div class="text-[11px] text-on-surface-variant">${row.guestEmail}</div>
+                </td>
+                <td class="py-md px-xs text-[12px]">${formatDate(row.checkIn)} to ${formatDate(row.checkOut)}</td>
+                <td class="py-md px-xs text-primary font-bold">$${Number(row.pricePaid).toLocaleString()}</td>
+                <td class="py-md px-xs">
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-green-500 mr-xs"></span>
+                    <span>Confirmed</span>
+                </td>
+            `;
+            body.appendChild(tr);
+        });
+    }
+
+    async function handleCreateProperty(e) {
+        e.preventDefault();
+        const user = Auth.getUser();
+        const title = document.getElementById('prop-create-title').value.trim();
+        const city = document.getElementById('prop-create-city').value.trim();
+        const rate = parseFloat(document.getElementById('prop-create-rate').value);
+        const category = document.getElementById('prop-create-category').value;
+
+        const newProperty = {
+            ownerId: user.id,
+            title,
+            city,
+            latitude: 0,
+            longitude: 0,
+            nightlyRate: rate,
+            rating: 5.0,
+            reviewsCount: 0,
+            category,
+            images: [
+                "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80"
+            ],
+            description: "A newly listed premium accommodation offering high-end amenities and modern decorations in a beautiful setting.",
+            features: ["2 Guests", "1 Bedroom", "1 Bed", "1 Bath"],
+            amenities: ["Wifi", "AC", "Kitchen", "Free Parking"],
+            owner: {
+                id: user.id,
+                fullName: user.fullName,
+                avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80",
+                joined: "June 2024"
+            }
+        };
+
+        const submit = e.target.querySelector('button[type="submit"]');
+        const originalText = submit.textContent;
+        submit.disabled = true;
+        submit.textContent = 'Creating...';
+
+        try {
+            const created = await HabittoAPI.createProperty(newProperty);
+            alert("Accommodation listed successfully!");
+            e.target.reset();
+            if (confirm("Would you like to see your listed property now?")) {
+                window.location.href = `details.html?id=${created.id}`;
+            }
+        } catch (err) {
+            alert("Could not create accommodation: " + err.message);
+        } finally {
+            submit.disabled = false;
+            submit.textContent = originalText;
+        }
+    }
+
+    function exportToExcel() {
+        const user = Auth.getUser();
+        HabittoAPI.exportReportExcel(user.id);
+    }
+
+    function formatDate(dateStr) {
+        if (!dateStr) return '';
+        return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        initProfile();
+    });
+</script>
+</body>
+</html>

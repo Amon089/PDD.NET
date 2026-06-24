@@ -1,109 +1,110 @@
 <!DOCTYPE html>
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HabitTo | My Trips &amp; Favorites</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HabitTo | My Trips &amp; Favorites</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             "colors": {
-                    "surface-dim": "#d3daea",
-                    "on-tertiary": "#ffffff",
-                    "tertiary-fixed-dim": "#d3bbff",
-                    "on-primary-container": "#ede0ff",
-                    "secondary": "#575e70",
-                    "primary-fixed-dim": "#d2bbff",
-                    "inverse-on-surface": "#ebf1ff",
-                    "on-surface": "#151c27",
-                    "secondary-container": "#d9dff5",
-                    "on-surface-variant": "#4a4455",
-                    "surface-container-lowest": "#ffffff",
-                    "on-tertiary-container": "#ede1ff",
-                    "tertiary-fixed": "#ebddff",
-                    "on-primary-fixed-variant": "#5a00c6",
-                    "on-error-container": "#93000a",
-                    "tertiary-container": "#7c3de8",
-                    "tertiary": "#6316cf",
-                    "surface-bright": "#f9f9ff",
-                    "surface": "#f9f9ff",
-                    "primary": "#630ed4",
-                    "on-primary": "#ffffff",
-                    "on-error": "#ffffff",
-                    "on-background": "#151c27",
-                    "surface-container-highest": "#dce2f3",
-                    "outline-variant": "#ccc3d8",
-                    "outline": "#7b7487",
-                    "surface-container-high": "#e2e8f8",
-                    "on-secondary": "#ffffff",
-                    "on-secondary-fixed-variant": "#404758",
-                    "primary-fixed": "#eaddff",
-                    "on-primary-fixed": "#25005a",
-                    "background": "#f9f9ff",
-                    "primary-container": "#7c3aed",
-                    "on-tertiary-fixed-variant": "#5b00c5",
-                    "on-secondary-container": "#5c6274",
-                    "error": "#ba1a1a",
-                    "surface-variant": "#dce2f3",
-                    "error-container": "#ffdad6",
-                    "surface-container": "#e7eefe",
-                    "on-secondary-fixed": "#141b2b",
-                    "on-tertiary-fixed": "#250059",
-                    "inverse-primary": "#d2bbff",
-                    "surface-tint": "#732ee4",
-                    "inverse-surface": "#2a313d",
-                    "secondary-fixed": "#dce2f7",
-                    "surface-container-low": "#f0f3ff",
-                    "secondary-fixed-dim": "#c0c6db"
+                "surface-dim": "#d3daea",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#d3bbff",
+                "on-primary-container": "#ede0ff",
+                "secondary": "#575e70",
+                "primary-fixed-dim": "#d2bbff",
+                "inverse-on-surface": "#ebf1ff",
+                "on-surface": "#151c27",
+                "secondary-container": "#d9dff5",
+                "on-surface-variant": "#4a4455",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#ede1ff",
+                "tertiary-fixed": "#ebddff",
+                "on-primary-fixed-variant": "#5a00c6",
+                "on-error-container": "#93000a",
+                "tertiary-container": "#7c3de8",
+                "tertiary": "#6316cf",
+                "surface-bright": "#f9f9ff",
+                "surface": "#f9f9ff",
+                "primary": "#630ed4",
+                "on-primary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-background": "#151c27",
+                "surface-container-highest": "#dce2f3",
+                "outline-variant": "#ccc3d8",
+                "outline": "#7b7487",
+                "surface-container-high": "#e2e8f8",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#404758",
+                "primary-fixed": "#eaddff",
+                "on-primary-fixed": "#25005a",
+                "background": "#f9f9ff",
+                "primary-container": "#7c3aed",
+                "on-tertiary-fixed-variant": "#5b00c5",
+                "on-secondary-container": "#5c6274",
+                "error": "#ba1a1a",
+                "surface-variant": "#dce2f3",
+                "error-container": "#ffdad6",
+                "surface-container": "#e7eefe",
+                "on-secondary-fixed": "#141b2b",
+                "on-tertiary-fixed": "#250059",
+                "inverse-primary": "#d2bbff",
+                "surface-tint": "#732ee4",
+                "inverse-surface": "#2a313d",
+                "secondary-fixed": "#dce2f7",
+                "surface-container-low": "#f0f3ff",
+                "secondary-fixed-dim": "#c0c6db"
             },
             "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
             },
             "spacing": {
-                    "md": "16px",
-                    "xs": "4px",
-                    "base": "4px",
-                    "lg": "24px",
-                    "sm": "8px",
-                    "xl": "32px",
-                    "gutter": "20px",
-                    "container-max": "1280px"
+                "md": "16px",
+                "xs": "4px",
+                "base": "4px",
+                "lg": "24px",
+                "sm": "8px",
+                "xl": "32px",
+                "gutter": "20px",
+                "container-max": "1280px"
             },
             "fontFamily": {
-                    "display": ["Inter"],
-                    "label-sm": ["Inter"],
-                    "headline-md": ["Inter"],
-                    "body-md": ["Inter"],
-                    "label-md": ["Inter"],
-                    "headline-sm": ["Inter"],
-                    "headline-lg-mobile": ["Inter"],
-                    "headline-lg": ["Inter"],
-                    "body-lg": ["Inter"]
+                "display": ["Inter"],
+                "label-sm": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "label-md": ["Inter"],
+                "headline-sm": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-lg": ["Inter"]
             },
             "fontSize": {
-                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                    "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                    "headline-sm": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "headline-sm": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
             }
           },
         },
       }
     </script>
-<style>
+    <style>
         body { font-family: 'Inter', sans-serif; }
         .glass-panel {
             backdrop-filter: blur(12px);
@@ -126,184 +127,526 @@
     </style>
 </head>
 <body class="bg-background text-on-surface">
+
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm h-20">
-<div class="max-w-container-max mx-auto px-4 md:px-lg flex justify-between items-center h-full">
-<div class="flex items-center gap-xl">
-<span class="font-display text-headline-sm font-bold text-primary">HabitTo</span>
-<div class="hidden md:flex gap-md font-body-md text-body-md">
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Explore</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Experiences</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Online Hosts</a>
-</div>
-</div>
-<div class="flex items-center gap-md">
-<div class="hidden sm:flex items-center gap-sm mr-md">
-<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-on-surface-variant">language</span></button>
-<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors" id="themeToggle"><span class="material-symbols-outlined text-on-surface-variant">dark_mode</span></button>
-</div>
-<div class="flex items-center gap-sm">
-<button class="px-md py-sm font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" onclick="toggleModal('loginModal')">Login</button>
-<button class="px-md py-sm bg-primary text-on-primary rounded-full font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all shadow-sm" onclick="toggleModal('loginModal')">Sign Up</button>
-</div>
-</div>
-</div>
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 h-20 shadow-sm">
+    <div class="max-w-container-max mx-auto px-4 md:px-lg flex justify-between items-center h-full">
+        <div class="flex items-center gap-xl">
+            <a class="font-display text-headline-sm font-bold text-primary" href="home.html">HabitTo</a>
+            <div class="hidden md:flex gap-md font-body-md text-body-md">
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="home.html">Explore</a>
+                <a class="text-primary border-b-2 border-primary pb-1 font-semibold" href="trips.html">Trips</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="profile.html">Dashboard</a>
+            </div>
+        </div>
+        <div class="flex items-center gap-md">
+            <div class="hidden sm:flex items-center gap-sm mr-md">
+                <button class="p-2 rounded-full hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-on-surface-variant">language</span></button>
+                <button class="p-2 rounded-full hover:bg-surface-container-high transition-colors" id="theme-toggle"><span class="material-symbols-outlined text-on-surface-variant" id="theme-icon">dark_mode</span></button>
+            </div>
+            
+            <div class="flex items-center gap-sm border border-outline-variant rounded-full px-2 py-1 hover:shadow-md transition-shadow bg-surface-container-lowest cursor-pointer">
+                <span class="material-symbols-outlined text-on-surface-variant">menu</span>
+                <span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+            </div>
+        </div>
+    </div>
 </nav>
+
 <main class="pt-32 pb-xl min-h-screen max-w-container-max mx-auto px-4 md:px-lg">
-<!-- Title & Tabs -->
-<header class="mb-xl">
-<h1 class="font-display text-headline-lg mb-lg">Trips and Favorites</h1>
-<div class="flex border-b border-outline-variant">
-<button class="px-lg py-md font-label-md text-label-md border-b-2 border-transparent hover:text-primary transition-colors tab-active" id="tab-bookings" onclick="switchTab('bookings')">My Bookings</button>
-<button class="px-lg py-md font-label-md text-label-md border-b-2 border-transparent hover:text-primary transition-colors text-on-surface-variant" id="tab-favorites" onclick="switchTab('favorites')">My Favorites</button>
-</div>
-</header>
-<!-- View Containers -->
-<div class="view-content animate-in fade-in duration-500" id="view-bookings">
-<!-- Bookings List -->
-<div class="space-y-lg">
-<h2 class="font-headline-sm text-on-surface-variant mb-md">Upcoming Stays</h2>
-<!-- Booking Item: Confirmed -->
-<div class="flex flex-col md:flex-row bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 hover:border-primary/20 transition-all custom-shadow group">
-<div class="w-full md:w-80 h-48 md:h-auto relative overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A modern architectural masterpiece home nestled in a lush Scandinavian forest, featuring large floor-to-ceiling glass windows that reflect the surrounding greenery. The image is captured in soft, natural morning light, emphasizing the premium and serene atmosphere of the property. The color palette is dominated by soft grays and deep forest greens, fitting a luxury lifestyle travel platform aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyd-uzqg8nCrmfp4t0LBJkaAPjzy8OG-lHN5rFL7AIlhCdNCVB0jRRJmdRwtaeHqCoy7sDuVO2CL6fGW30EcjB4HTJpcx5Dq04fv16bD6IjpEt2WBtuIrpouoPSnpNrAKaVGZis5M4knkFHU98jjotJd9GWeh-ylsdPpDLo0QZzLA1lHHCSHQ7Xt5Lj9m6LNhFCPEsYKUKGeZMSpZoKaxDtOBQl17kh9l_vWR012z9MkSoSNc6M3TZ-CanPS2SwITJLxKaZG-gXwA"/>
-<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-sm py-xs rounded-full flex items-center gap-xs">
-<span class="w-2 h-2 rounded-full bg-green-500"></span>
-<span class="text-[10px] font-bold uppercase tracking-wider text-on-surface">Confirmed</span>
-</div>
-</div>
-<div class="flex-1 p-lg flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-start">
-<div>
-<p class="font-label-sm text-primary mb-xs uppercase tracking-widest">Oslo, Norway</p>
-<h3 class="font-headline-sm text-on-surface mb-xs">Mirror Cabin in the Woods</h3>
-</div>
-<div class="text-right">
-<p class="font-headline-sm text-primary">$1,240</p>
-<p class="font-label-sm text-on-surface-variant">Total Price</p>
-</div>
-</div>
-<div class="mt-md flex flex-wrap gap-md">
-<div class="flex items-center gap-xs text-on-surface-variant">
-<span class="material-symbols-outlined text-[20px]">calendar_today</span>
-<span class="font-body-md text-label-md">Oct 12 - Oct 18, 2024</span>
-</div>
-<div class="flex items-center gap-xs text-on-surface-variant">
-<span class="material-symbols-outlined text-[20px]">group</span>
-<span class="font-body-md text-label-md">2 Guests</span>
-</div>
-</div>
-</div>
-<div class="mt-lg flex gap-md">
-<button class="px-md py-sm bg-surface-container-high rounded-lg font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Manage Booking</button>
-<button class="px-md py-sm border border-outline rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors">Message Host</button>
-</div>
-</div>
-</div>
-<!-- Booking Item: Pending -->
-<div class="flex flex-col md:flex-row bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 hover:border-primary/20 transition-all custom-shadow group opacity-80 grayscale-[0.3]">
-<div class="w-full md:w-80 h-48 md:h-auto relative overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A minimalist coastal villa overlooking the Mediterranean sea at sunset. The architecture is characterized by clean white lines and a sleek infinity pool that merges with the horizon. The lighting is warm and golden, creating a sense of aspirational luxury and tranquility. High-end property photography style with a focus on geometric balance and premium travel aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLeSRpOnug_pxcBEQfKFnWROzWBdpud6mu7iiYtMtRwUZQzLzKneBfqRtwuLoJe5iTsiTXbbBiEl_MRG4YCjCUAYwAdqnIC1FlQgQb82vfioefsQEe-_VnnJmLebLXmDvQ8F0Q0bGxsV84azUlerzFf9PLrCIleH7yV6iinBNZUhWUzL6-5VBgQwnusos6OnEORH9SHLEKE3NkRd6lm5OzfEjDS9dJWKup9an44cmY0KAMN2YfMak5pZqg6z7AdMc-NiE_UCSPt7U"/>
-<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-sm py-xs rounded-full flex items-center gap-xs">
-<span class="w-2 h-2 rounded-full bg-amber-400"></span>
-<span class="text-[10px] font-bold uppercase tracking-wider text-on-surface">Pending</span>
-</div>
-</div>
-<div class="flex-1 p-lg flex flex-col justify-between">
-<div>
-<div class="flex justify-between items-start">
-<div>
-<p class="font-label-sm text-primary mb-xs uppercase tracking-widest">Santorini, Greece</p>
-<h3 class="font-headline-sm text-on-surface mb-xs">Azure Infinity Villa</h3>
-</div>
-<div class="text-right">
-<p class="font-headline-sm text-primary">$2,800</p>
-<p class="font-label-sm text-on-surface-variant">Total Price</p>
-</div>
-</div>
-<div class="mt-md flex flex-wrap gap-md">
-<div class="flex items-center gap-xs text-on-surface-variant">
-<span class="material-symbols-outlined text-[20px]">calendar_today</span>
-<span class="font-body-md text-label-md">Nov 04 - Nov 09, 2024</span>
-</div>
-<div class="flex items-center gap-xs text-on-surface-variant">
-<span class="material-symbols-outlined text-[20px]">group</span>
-<span class="font-body-md text-label-md">4 Guests</span>
-</div>
-</div>
-</div>
-<div class="mt-lg">
-<p class="text-label-sm text-error font-semibold flex items-center gap-xs">
-<span class="material-symbols-outlined text-[16px]">info</span>
-                                Waiting for host approval
-                            </p>
-</div>
-</div>
-</div>
-</div>
-<!-- Past Bookings Section -->
-<div class="mt-xl pt-xl border-t border-outline-variant">
-<h2 class="font-headline-sm text-on-surface-variant mb-md opacity-60">Past Stays</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
-<div class="flex items-center gap-md p-md bg-surface-container-low rounded-xl border border-transparent hover:border-outline-variant/50 transition-colors">
-<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
-<img class="w-full h-full object-cover" data-alt="A cozy, high-end mountain chalet interior with a roaring fireplace and large windows showing a snowy Alpine landscape. The room is decorated with premium textiles, furs, and warm wood accents. The photography is sharp and warm, capturing a high-end winter retreat mood. Sophisticated and minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqoPKHbyZqZHkX4_auizchaNlpyzlCaDyF-lsCvhuy9a-Ko8IEI6gV0hX1lmT9OtfEWbXrPm53icnebzj_uXdYxlhlNpyhPljwA1BRbcyHiZ-N63t0tOofYq_wknFSM2fmn1fgwVgFZ5To2bMt91Qt6AjBAsL-l_ywmHdbk3NMFeNFXG7OUO2XkxaoOk6FoCGOg8CMNAmM-YMi5cK4T63iU_shGrCytdEBgvzKwJaBJH3wU1jiUSaV0WQlGthdSMXjANC2kTMs8Fo"/>
-</div>
-<div class="flex-1 min-w-0">
-<h4 class="font-label-md text-on-surface truncate">Alpine Lodge Retreat</h4>
-<p class="font-label-sm text-on-surface-variant">Jan 2024 • 3 Nights</p>
-</div>
-<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">receipt_long</span></button>
-</div>
-<div class="flex items-center gap-md p-md bg-surface-container-low rounded-xl border border-transparent hover:border-outline-variant/50 transition-colors">
-<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
-<img class="w-full h-full object-cover" data-alt="A modern industrial loft in downtown Tokyo featuring clean lines, concrete walls, and large industrial windows overlooking the city neon lights. The space is curated with mid-century modern furniture and lush indoor plants. The photo style is professional, sharp, and highlights urban sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2e89y1K-3yzl2xBfGEL0xyZ1SRgBI5h3Ig4SGDc8IrdXe141dMS9chkKgazs5KSxI7biGh50hmUZEv4BT9X9yvIVlDXP5psoNwGEtNXNsS3s-8WdsaxuLOc8YglgLQwn6xfKk60YVZvPp71Sy8vFYSY2NLnhwAFWOgZr90vtAfuhAnZ5ZcHthrtOl7NMYqNmQqYrvgwgqsX2dv9OXZ1zxWEC5txz63AP3CSRtdto3xHeB2evGiDrOmfYVrIOf46FG__OTFJIabRc"/>
-</div>
-<div class="flex-1 min-w-0">
-<h4 class="font-label-md text-on-surface truncate">Tokyo Urban Loft</h4>
-<p class="font-label-sm text-on-surface-variant">Dec 2023 • 5 Nights</p>
-</div>
-<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">receipt_long</span></button>
-</div>
-</div>
-</div>
-</div>
-<div class="view-content hidden animate-in fade-in duration-500" id="view-favorites">
-<!-- Property Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-xl">
-<!-- Card 1 -->
-<div class="flex flex-col group cursor-pointer hover-lift">
-<div class="relative aspect-square rounded-xl overflow-hidden mb-md shadow-sm">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A bright and airy beach house in the Maldives with direct access to turquoise waters. The interior is decorated with natural wood and white linens, creating a calm and refreshing atmosphere. Captured with high-key lighting to enhance the pristine, tropical luxury vibe. Sharp, professional architectural photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBON2G_dY9cs4ylmOmh-pRRYz3PVnl2ArIIpwmIfal6vMNQ86_zGLyUVvvZ6QGXcb6yTJOqHxDQwHHfpeT5sGpbYf7mwowVQFXd7-sNVrAPndECiQKCPFWvMNIaF-Ncax6HLIyjO48lqXU-LRPxtS1OACv6MV8RjmAl_CeL93W9NBojXeQWYWVk7rPCERRSYBB16WJjM13f9CLNvXihRXEWptdstlyHYzQ1f3Y_dYlnCh4Sk10dPIv-_D9PD7QgCLK47CK8rsWTgG4"/>
-<button class="absolute top-3 right-3 p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/40 transition-colors">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
-</button>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h3 class="font-label-md text-on-surface">Maldives Overwater Suite</h3>
-<p class="font-body-md text-label-sm text-on-surface-variant">Baa Atoll, Maldives</p>
-<p class="font-body-md text-label-sm text-on-surface-variant mt-xs">Dec 10 - 15</p>
-</div>
-<div class="flex items-center gap-xs">
-<span class="material-symbols-outlined text-[16px] text-on-surface" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="font-label-md text-on-surface">4.92</span>
-</div>
-</div>
-<p class="font-headline-sm text-primary mt-sm">$450 <span class="font-label-sm text-on-surface-variant font-normal">night</span></p>
-</div>
-<!-- Card 2 -->
-<div class="flex flex-col group cursor-pointer hover-lift">
-<div class="relative aspect-square rounded-xl overflow-hidden mb-md shadow-sm">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A rustic yet luxurious Italian farmhouse in the heart of Tuscany, surrounded by rolling hills and vineyards. The stone architecture is bathed in the warm, golden light of late afternoon. The photography focuses on the historical charm and tranquil country life of Italy. High-end lifestyle imagery with rich, earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmx5f6cfe5_vF2NVGHjQ2SphnV29zG4J5g6NDUCZf54XJddSrMC6KM94B_n4qchoQbQzIti2uVLQblxYzX2le68YuSQ3Npw2AW1Tj70ztBnfbwxLflejC5f8BKMKv8wvO5IJnGO9xz8W5WWo3EUX2ERIHon20l57mliGJjOS2MEFhWS7Pd0ibcZA2l9aWmZTmS5521rQnP6gicDBHXldGOpAwscPwGUFQXW2eI5HSeHopd9vjuecirvlZ1rl2V4Leg9GaZzTYOZJk"/>
-<button class="absolute top-3 right-3 p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/40 transition-colors">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
-</button>
-</div>
-</div>
-</div>
-</div>
+    <!-- Title & Tabs -->
+    <header class="mb-xl">
+        <h1 class="font-display text-headline-lg mb-lg">Trips and Favorites</h1>
+        <div class="flex border-b border-outline-variant">
+            <button class="px-lg py-md font-label-md text-label-md border-b-2 border-transparent hover:text-primary transition-colors tab-active" id="tab-bookings" onclick="switchTab('bookings')">My Bookings</button>
+            <button class="px-lg py-md font-label-md text-label-md border-b-2 border-transparent hover:text-primary transition-colors text-on-surface-variant" id="tab-favorites" onclick="switchTab('favorites')">My Favorites</button>
+        </div>
+    </header>
+
+    <!-- View: Bookings -->
+    <div class="view-content animate-in fade-in duration-500" id="view-bookings">
+        <div class="space-y-lg">
+            <h2 class="font-headline-sm text-on-surface-variant mb-md">Upcoming Stays</h2>
+            <div id="upcoming-stays-list" class="space-y-lg">
+                <!-- Upcoming Booking items populated dynamically -->
+            </div>
+        </div>
+        
+        <!-- Past Bookings Section -->
+        <div class="mt-xl pt-xl border-t border-outline-variant">
+            <h2 class="font-headline-sm text-on-surface-variant mb-md opacity-60">Past Stays</h2>
+            <div id="past-stays-grid" class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                <!-- Past booking items populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- View: Favorites -->
+    <div class="view-content hidden animate-in fade-in duration-500" id="view-favorites">
+        <div id="favorites-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-xl">
+            <!-- Favorite properties populated dynamically -->
+        </div>
+    </div>
 </main>
+
+<script src="app.js"></script>
+<script>
+    let activeTab = 'bookings';
+    let wishlistIds = [];
+
+    function getQueryParam(param) {
+        return new URLSearchParams(window.location.search).get(param);
+    }
+
+    async function initTrips() {
+        const user = Auth.getUser();
+        if (!user) {
+            HabittoUI.toggleAuthModal(true, 'login');
+            return;
+        }
+
+        const defaultTab = getQueryParam('tab');
+        if (defaultTab === 'favorites') {
+            switchTab('favorites');
+        } else {
+            await renderBookings();
+        }
+    }
+
+    function switchTab(tab) {
+        activeTab = tab;
+        const viewBookings  = document.getElementById('view-bookings');
+        const viewFavorites = document.getElementById('view-favorites');
+        const tabBookings   = document.getElementById('tab-bookings');
+        const tabFavorites  = document.getElementById('tab-favorites');
+
+        if (tab === 'bookings') {
+            viewBookings.classList.remove('hidden');
+            viewFavorites.classList.add('hidden');
+            tabBookings.className  = 'px-lg py-md font-label-md text-label-md border-b-2 border-primary text-primary transition-colors tab-active';
+            tabFavorites.className = 'px-lg py-md font-label-md text-label-md border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-colors';
+            renderBookings();
+        } else {
+            viewBookings.classList.add('hidden');
+            viewFavorites.classList.remove('hidden');
+            tabFavorites.className = 'px-lg py-md font-label-md text-label-md border-b-2 border-primary text-primary transition-colors tab-active';
+            tabBookings.className  = 'px-lg py-md font-label-md text-label-md border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-colors';
+            renderFavorites();
+        }
+    }
+
+    async function renderBookings() {
+        const user = Auth.getUser();
+        const upcomingContainer = document.getElementById('upcoming-stays-list');
+        const pastContainer     = document.getElementById('past-stays-grid');
+
+        upcomingContainer.innerHTML = '<p class="text-on-surface-variant text-label-md">Loading...</p>';
+        pastContainer.innerHTML = '';
+
+        let bookings = [];
+        try {
+            bookings = await HabittoAPI.getBookings(user.id);
+        } catch (e) {
+            upcomingContainer.innerHTML = `<p class="text-error font-label-md">Could not load bookings: ${e.message}</p>`;
+            return;
+        }
+
+        const upcoming = bookings.filter(b => b.status === 'Confirmed' || b.status === 'Pending');
+        const past     = bookings.filter(b => b.status === 'Completed' || b.status === 'Cancelled');
+
+        upcomingContainer.innerHTML = '';
+
+        if (upcoming.length === 0) {
+            upcomingContainer.innerHTML = `
+                <div class="bg-surface-container-low rounded-xl p-xl text-center border border-dashed border-outline-variant/30">
+                    <span class="material-symbols-outlined text-[48px] text-outline-variant mb-md">travel</span>
+                    <h3 class="font-headline-sm text-on-surface">No upcoming stays</h3>
+                    <p class="text-on-surface-variant mb-md">Time to start planning your next escape!</p>
+                    <a href="home.html" class="bg-primary text-on-primary font-bold px-lg py-md rounded-xl inline-block shadow-sm hover:opacity-90 transition-opacity">Explore Properties</a>
+                </div>
+            `;
+        } else {
+            for (const b of upcoming) {
+                // Fetch property for visual info
+                let prop = null;
+                try { prop = await HabittoAPI.getProperty(b.propertyId); } catch {}
+                const images = prop?.images || ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=400&q=80'];
+                const title  = prop?.title || b.propertyId;
+                const city   = prop?.city  || '';
+
+                const statusColor = b.status === 'Pending' ? 'bg-amber-400' : 'bg-green-500';
+                const item = document.createElement('div');
+                item.className = 'flex flex-col md:flex-row bg-surface-container-lowest dark:bg-inverse-surface rounded-xl overflow-hidden border border-outline-variant/30 hover:border-primary/20 transition-all custom-shadow group';
+                item.innerHTML = `
+                    <div class="w-full md:w-80 h-48 md:h-auto relative overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${images[0]}" alt="${title}"/>
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-sm py-xs rounded-full flex items-center gap-xs">
+                            <span class="w-2 h-2 rounded-full ${statusColor}"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface">${b.status}</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 p-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="font-label-sm text-primary mb-xs uppercase tracking-widest">${city}</p>
+                                    <h3 class="font-headline-sm text-on-surface mb-xs cursor-pointer hover:underline" onclick="window.location.href='details.html?id=${b.propertyId}'">${title}</h3>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-headline-sm text-primary">$${(b.totalPrice || 0).toLocaleString()}</p>
+                                    <p class="font-label-sm text-on-surface-variant">Total Price</p>
+                                </div>
+                            </div>
+                            <div class="mt-md flex flex-wrap gap-md">
+                                <div class="flex items-center gap-xs text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                                    <span class="font-body-md text-label-md">${formatDate(b.checkIn || b.checkInUtc)} - ${formatDate(b.checkOut || b.checkOutUtc)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                upcomingContainer.appendChild(item);
+            }
+        }
+
+        pastContainer.innerHTML = '';
+        if (past.length === 0) {
+            pastContainer.innerHTML = `<p class="col-span-2 text-on-surface-variant text-label-md italic">No past stays recorded.</p>`;
+        } else {
+            for (const b of past) {
+                let prop = null;
+                try { prop = await HabittoAPI.getProperty(b.propertyId); } catch {}
+                const images = prop?.images || ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=200&q=80'];
+                const title  = prop?.title || b.propertyId;
+
+                const card = document.createElement('div');
+                card.className = 'flex items-center gap-md p-md bg-surface-container-low rounded-xl border border-transparent hover:border-outline-variant/50 transition-colors cursor-pointer';
+                card.onclick = () => prop && (window.location.href = `details.html?id=${prop.id}`);
+                card.innerHTML = `
+                    <div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+                        <img class="w-full h-full object-cover" src="${images[0]}" alt="${title}"/>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-label-md text-on-surface truncate">${title}</h4>
+                        <p class="font-label-sm text-on-surface-variant">${formatDate(b.checkIn || b.checkInUtc)} • ${b.status}</p>
+                    </div>
+                    <button onclick="event.stopPropagation(); alert('Receipt generation coming soon.');" class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+                        <span class="material-symbols-outlined">receipt_long</span>
+                    </button>
+                `;
+                pastContainer.appendChild(card);
+            }
+        }
+    }
+
+    async function renderFavorites() {
+        const user = Auth.getUser();
+        const container = document.getElementById('favorites-grid');
+        container.innerHTML = '<p class="col-span-full text-on-surface-variant text-label-md">Loading...</p>';
+
+        let items = [];
+        try {
+            items = await HabittoAPI.getWishlist(user.id);
+            wishlistIds = items.map(i => i.propertyId);
+        } catch (e) {
+            container.innerHTML = `<p class="col-span-full text-error font-label-md">Could not load favorites: ${e.message}</p>`;
+            return;
+        }
+
+        container.innerHTML = '';
+
+        if (items.length === 0) {
+            container.innerHTML = `
+                <div class="col-span-full py-xl text-center">
+                    <span class="material-symbols-outlined text-[64px] text-outline-variant mb-md">favorite_border</span>
+                    <h3 class="font-headline-sm text-on-surface mb-xs">No favorites saved</h3>
+                    <p class="text-on-surface-variant">Click the heart icon on properties to save them here.</p>
+                </div>
+            `;
+            return;
+        }
+
+        for (const item of items) {
+            let prop = null;
+            try { prop = await HabittoAPI.getProperty(item.propertyId); } catch {}
+            if (!prop) continue;
+
+            const images = prop.images || ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=400&q=80'];
+            const card = document.createElement('div');
+            card.className = 'flex flex-col group cursor-pointer hover-lift';
+            card.innerHTML = `
+                <div class="relative aspect-square rounded-xl overflow-hidden mb-md shadow-sm">
+                    <img onclick="window.location.href='details.html?id=${prop.id}'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${images[0]}" alt="${prop.title}"/>
+                    <button class="absolute top-3 right-3 p-2 bg-white/30 backdrop-blur-md rounded-full text-red-500 hover:bg-white/50 transition-colors z-10" onclick="removeFavorite(event, '${prop.id}')">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                    </button>
+                </div>
+                <div onclick="window.location.href='details.html?id=${prop.id}'" class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-label-md text-on-surface truncate w-40">${prop.title}</h3>
+                        <p class="font-body-md text-label-sm text-on-surface-variant">${prop.city}</p>
+                    </div>
+                    <div class="flex items-center gap-xs">
+                        <span class="material-symbols-outlined text-[16px] text-on-surface filled-icon">star</span>
+                        <span class="font-label-md text-on-surface">${prop.rating || '5.0'}</span>
+                    </div>
+                </div>
+                <p class="font-headline-sm text-primary mt-sm">$${prop.nightlyRate} <span class="font-label-sm text-on-surface-variant font-normal">night</span></p>
+            `;
+            container.appendChild(card);
+        }
+    }
+
+    async function removeFavorite(e, propertyId) {
+        e.stopPropagation();
+        const user = Auth.getUser();
+        try {
+            await HabittoAPI.removeFromWishlist(user.id, propertyId);
+            wishlistIds = wishlistIds.filter(id => id !== propertyId);
+            renderFavorites();
+        } catch (err) {
+            alert('Could not remove from favorites: ' + err.message);
+        }
+    }
+
+    function formatDate(dateStr) {
+        if (!dateStr) return '';
+        return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        initTrips();
+    });
+</script>
 </body>
 </html>
+
+<!-- Legacy duplicate script kept disabled.
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    function initTrips() {
+        const user = HabittoAuth.getCurrentUser();
+        if (!user) {
+            alert("Please log in to view your bookings.");
+            window.location.href = "home.html";
+            return;
+        }
+
+        const defaultTab = getQueryParam('tab');
+        if (defaultTab === 'favorites') {
+            switchTab('favorites');
+        } else {
+            renderBookings();
+        }
+    }
+
+    function switchTab(tab) {
+        activeTab = tab;
+        const viewBookings = document.getElementById('view-bookings');
+        const viewFavorites = document.getElementById('view-favorites');
+        const tabBookings = document.getElementById('tab-bookings');
+        const tabFavorites = document.getElementById('tab-favorites');
+
+        if (tab === 'bookings') {
+            viewBookings.classList.remove('hidden');
+            viewFavorites.classList.add('hidden');
+            tabBookings.className = "px-lg py-md font-label-md text-label-md border-b-2 border-primary text-primary transition-colors tab-active";
+            tabFavorites.className = "px-lg py-md font-label-md text-label-md border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-colors";
+            renderBookings();
+        } else {
+            viewBookings.classList.add('hidden');
+            viewFavorites.classList.remove('hidden');
+            tabFavorites.className = "px-lg py-md font-label-md text-label-md border-b-2 border-primary text-primary transition-colors tab-active";
+            tabBookings.className = "px-lg py-md font-label-md text-label-md border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-colors";
+            renderFavorites();
+        }
+    }
+
+    function renderBookings() {
+        const user = HabittoAuth.getCurrentUser();
+        const bookings = HabittoData.getBookings(user.id);
+        const upcomingContainer = document.getElementById('upcoming-stays-list');
+        const pastContainer = document.getElementById('past-stays-grid');
+
+        upcomingContainer.innerHTML = '';
+        pastContainer.innerHTML = '';
+
+        // Separate bookings
+        const upcoming = bookings.filter(b => b.status === 'Confirmed' || b.status === 'Pending');
+        const past = bookings.filter(b => b.status === 'Completed' || b.status === 'Cancelled');
+
+        if (upcoming.length === 0) {
+            upcomingContainer.innerHTML = `
+                <div class="bg-surface-container-low rounded-xl p-xl text-center border border-dashed border-outline-variant/30">
+                    <span class="material-symbols-outlined text-[48px] text-outline-variant mb-md">travel</span>
+                    <h3 class="font-headline-sm text-on-surface">No upcoming stays</h3>
+                    <p class="text-on-surface-variant mb-md">Time to start planning your next escape!</p>
+                    <a href="home.html" class="bg-primary text-on-primary font-bold px-lg py-md rounded-xl inline-block shadow-sm hover:opacity-90 transition-opacity">Explore Properties</a>
+                </div>
+            `;
+        } else {
+            upcoming.forEach(b => {
+                const prop = HabittoData.getProperty(b.propertyId);
+                if (!prop) return;
+
+                // Status indicator styles
+                let statusColor = "bg-green-500";
+                let bgOpacity = "";
+                let warningText = "";
+
+                if (b.status === 'Pending') {
+                    statusColor = "bg-amber-400";
+                    bgOpacity = "opacity-80 grayscale-[0.3]";
+                    warningText = `
+                        <div class="mt-md">
+                            <p class="text-label-sm text-error font-semibold flex items-center gap-xs">
+                                <span class="material-symbols-outlined text-[16px]">info</span>
+                                Waiting for host approval
+                            </p>
+                        </div>
+                    `;
+                }
+
+                const item = document.createElement('div');
+                item.className = `flex flex-col md:flex-row bg-surface-container-lowest dark:bg-inverse-surface rounded-xl overflow-hidden border border-outline-variant/30 hover:border-primary/20 transition-all custom-shadow group ${bgOpacity}`;
+                item.innerHTML = `
+                    <div class="w-full md:w-80 h-48 md:h-auto relative overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="${prop.images[0]}" alt="${prop.title}"/>
+                        <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-sm py-xs rounded-full flex items-center gap-xs">
+                            <span class="w-2 h-2 rounded-full ${statusColor}"></span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface">${b.status}</span>
+                        </div>
+                    </div>
+                    <div class="flex-1 p-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="font-label-sm text-primary mb-xs uppercase tracking-widest">${prop.city}, ${prop.country}</p>
+                                    <h3 class="font-headline-sm text-on-surface mb-xs cursor-pointer hover:underline" onclick="window.location.href='details.html?id=${prop.id}'">${prop.title}</h3>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-headline-sm text-primary">$${b.totalPrice.toLocaleString()}</p>
+                                    <p class="font-label-sm text-on-surface-variant">Total Price</p>
+                                </div>
+                            </div>
+                            <div class="mt-md flex flex-wrap gap-md">
+                                <div class="flex items-center gap-xs text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-[20px]">calendar_today</span>
+                                    <span class="font-body-md text-label-md">${formatDate(b.checkIn)} - ${formatDate(b.checkOut)}</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-[20px]">group</span>
+                                    <span class="font-body-md text-label-md">${b.guests} Guests</span>
+                                </div>
+                            </div>
+                        </div>
+                        ${warningText}
+                        <div class="mt-lg flex gap-md">
+                            <button onclick="handleCancelStay('${b.id}')" class="px-md py-sm border border-error text-error rounded-lg font-label-md text-label-md hover:bg-red-50 dark:hover:bg-red-950/20 transition-colors">Cancel Stay</button>
+                            <button class="px-md py-sm border border-outline rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors">Message Host</button>
+                        </div>
+                    </div>
+                `;
+                upcomingContainer.appendChild(item);
+            });
+        }
+
+        if (past.length === 0) {
+            pastContainer.innerHTML = `<p class="col-span-2 text-on-surface-variant text-label-md italic">No past stays recorded.</p>`;
+        } else {
+            past.forEach(b => {
+                const prop = HabittoData.getProperty(b.propertyId);
+                if (!prop) return;
+
+                const card = document.createElement('div');
+                card.className = "flex items-center gap-md p-md bg-surface-container-low rounded-xl border border-transparent hover:border-outline-variant/50 transition-colors cursor-pointer";
+                card.onclick = () => window.location.href = `details.html?id=${prop.id}`;
+                card.innerHTML = `
+                    <div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+                        <img class="w-full h-full object-cover" src="${prop.images[0]}" alt="${prop.title}"/>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-label-md text-on-surface truncate">${prop.title}</h4>
+                        <p class="font-label-sm text-on-surface-variant">${formatDate(b.checkIn)} • ${b.status}</p>
+                    </div>
+                    <button onclick="event.stopPropagation(); alert('Invoice PDF download simulation');" class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant"><span class="material-symbols-outlined">receipt_long</span></button>
+                `;
+                pastContainer.appendChild(card);
+            });
+        }
+    }
+
+    function renderFavorites() {
+        const favIds = HabittoData.getFavorites() || [];
+        const container = document.getElementById('favorites-grid');
+        container.innerHTML = '';
+
+        if (favIds.length === 0) {
+            container.innerHTML = `
+                <div class="col-span-full py-xl text-center">
+                    <span class="material-symbols-outlined text-[64px] text-outline-variant mb-md">favorite_border</span>
+                    <h3 class="font-headline-sm text-on-surface mb-xs">No favorites saved</h3>
+                    <p class="text-on-surface-variant">Click the heart icon on properties to save them here.</p>
+                </div>
+            `;
+            return;
+        }
+
+        favIds.forEach(id => {
+            const prop = HabittoData.getProperty(id);
+            if (!prop) return;
+
+            const card = document.createElement('div');
+            card.className = "flex flex-col group cursor-pointer hover-lift";
+            card.innerHTML = `
+                <div class="relative aspect-square rounded-xl overflow-hidden mb-md shadow-sm">
+                    <img onclick="window.location.href='details.html?id=${prop.id}'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${prop.images[0]}" alt="${prop.title}"/>
+                    <button class="absolute top-3 right-3 p-2 bg-white/30 backdrop-blur-md rounded-full text-red-500 hover:bg-white/50 transition-colors z-10" onclick="removeFavorite(event, '${prop.id}')">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                    </button>
+                </div>
+                <div onclick="window.location.href='details.html?id=${prop.id}'" class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-label-md text-on-surface truncate w-40">${prop.title}</h3>
+                        <p class="font-body-md text-label-sm text-on-surface-variant">${prop.city}, ${prop.country}</p>
+                    </div>
+                    <div class="flex items-center gap-xs">
+                        <span class="material-symbols-outlined text-[16px] text-on-surface filled-icon">star</span>
+                        <span class="font-label-md text-on-surface">${prop.rating}</span>
+                    </div>
+                </div>
+                <p class="font-headline-sm text-primary mt-sm">$${prop.nightlyRate} <span class="font-label-sm text-on-surface-variant font-normal">night</span></p>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    function removeFavorite(e, propertyId) {
+        e.stopPropagation();
+        HabittoData.toggleFavorite(propertyId);
+        renderFavorites();
+    }
+
+    function handleCancelStay(bookingId) {
+        if (confirm("Are you sure you want to cancel this booking?")) {
+            HabittoData.cancelBooking(bookingId);
+            renderBookings();
+        }
+    }
+
+    function formatDate(dateStr) {
+        const options = { month: 'short', day: 'numeric', year: 'numeric' };
+        return new Date(dateStr).toLocaleDateString('en-US', options);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(initTrips, 100);
+    });
+</script>
+</body>
+</html>
+-->

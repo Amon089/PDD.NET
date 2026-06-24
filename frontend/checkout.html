@@ -1,0 +1,470 @@
+﻿<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HabitTo | Checkout &amp; Booking</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-dim": "#d3daea",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#d3bbff",
+                "on-primary-container": "#ede0ff",
+                "secondary": "#575e70",
+                "primary-fixed-dim": "#d2bbff",
+                "inverse-on-surface": "#ebf1ff",
+                "on-surface": "#151c27",
+                "secondary-container": "#d9dff5",
+                "on-surface-variant": "#4a4455",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#ede1ff",
+                "tertiary-fixed": "#ebddff",
+                "on-primary-fixed-variant": "#5a00c6",
+                "on-error-container": "#93000a",
+                "tertiary-container": "#7c3de8",
+                "tertiary": "#6316cf",
+                "surface-bright": "#f9f9ff",
+                "surface": "#f9f9ff",
+                "primary": "#630ed4",
+                "on-primary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-background": "#151c27",
+                "surface-container-highest": "#dce2f3",
+                "outline-variant": "#ccc3d8",
+                "outline": "#7b7487",
+                "surface-container-high": "#e2e8f8",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#404758",
+                "primary-fixed": "#eaddff",
+                "on-primary-fixed": "#25005a",
+                "background": "#f9f9ff",
+                "primary-container": "#7c3aed",
+                "on-tertiary-fixed-variant": "#5b00c5",
+                "on-secondary-container": "#5c6274",
+                "error": "#ba1a1a",
+                "surface-variant": "#dce2f3",
+                "error-container": "#ffdad6",
+                "surface-container": "#e7eefe",
+                "on-secondary-fixed": "#141b2b",
+                "on-tertiary-fixed": "#250059",
+                "inverse-primary": "#d2bbff",
+                "surface-tint": "#732ee4",
+                "inverse-surface": "#2a313d",
+                "secondary-fixed": "#dce2f7",
+                "surface-container-low": "#f0f3ff",
+                "secondary-fixed-dim": "#c0c6db"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "md": "16px",
+                "xs": "4px",
+                "base": "4px",
+                "lg": "24px",
+                "sm": "8px",
+                "xl": "32px",
+                "gutter": "20px",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "display": ["Inter"],
+                "label-sm": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "label-md": ["Inter"],
+                "headline-sm": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "headline-sm": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container transition-colors duration-300">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-white/10 shadow-sm h-20 transition-all duration-300">
+    <div class="max-w-container-max mx-auto px-4 md:px-lg flex justify-between items-center h-full gap-md">
+        <div class="flex items-center">
+            <a class="font-display text-headline-sm font-bold text-primary dark:text-primary-fixed-dim" href="home.html">HabitTo</a>
+        </div>
+        <div class="flex items-center gap-md">
+            <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="home.html">Explore</a>
+            <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="trips.html">Trips</a>
+            <div class="flex items-center gap-sm border border-outline-variant rounded-full px-2 py-1 hover:shadow-md transition-shadow bg-surface-container-lowest cursor-pointer">
+                <span class="material-symbols-outlined text-on-surface-variant">menu</span>
+                <span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-28 pb-xl max-w-container-max mx-auto px-4 md:px-lg">
+    <!-- Success Banner (Hidden by default) -->
+    <div id="booking-success" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-md items-center justify-center">
+        <div class="bg-surface border border-outline-variant/30 rounded-[2rem] p-xl text-center max-w-md w-full mx-md shadow-2xl animate-in zoom-in-95 duration-300">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-lg">
+                <span class="material-symbols-outlined text-[48px] filled-icon">check_circle</span>
+            </div>
+            <h2 class="font-display text-headline-lg mb-md text-on-surface">Stay Confirmed!</h2>
+            <p class="text-on-surface-variant mb-xl">Your booking request has been successfully created. Prepare for your premium trip!</p>
+            <p class="text-[12px] text-primary animate-pulse">Redirecting to My Bookings...</p>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <header class="mb-xl flex items-center gap-md">
+        <button onclick="window.history.back()" class="p-2 rounded-full hover:bg-surface-container-high transition-colors">
+            <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <h1 class="font-display text-headline-lg">Confirm and Book</h1>
+    </header>
+
+    <!-- Checkout Grid -->
+    <div class="flex flex-col lg:flex-row gap-xl items-start">
+        
+        <!-- Left Column: Forms -->
+        <div class="flex-1 w-full space-y-xl">
+            <!-- Details Overview -->
+            <section class="bg-surface-container-low dark:bg-surface-container-lowest rounded-[1.5rem] p-lg border border-outline-variant/20 space-y-md">
+                <h2 class="font-headline-sm">Your Trip</h2>
+                
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-label-md text-on-surface">Dates</h3>
+                        <p id="stay-dates" class="text-on-surface-variant">Oct 12 - Oct 18, 2024</p>
+                    </div>
+                </div>
+                
+                <div class="h-px bg-outline-variant/20"></div>
+
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-label-md text-on-surface">Guests</h3>
+                        <p id="stay-guests" class="text-on-surface-variant">2 Guests</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Identity Verification Gate -->
+            <section id="identity-section" class="bg-surface-container-low dark:bg-surface-container-lowest rounded-[1.5rem] p-lg border border-outline-variant/20 space-y-md">
+                <div class="flex items-start gap-md">
+                    <div id="identity-status-icon" class="p-2 rounded-full bg-amber-100 text-amber-600 shrink-0">
+                        <span class="material-symbols-outlined text-[28px]">gpp_maybe</span>
+                    </div>
+                    <div class="space-y-sm">
+                        <h2 class="font-headline-sm">Identity Verification</h2>
+                        <p id="identity-desc" class="text-on-surface-variant leading-relaxed">
+                            Under HabitTo policies, you must verify your identity before confirming your first stay.
+                        </p>
+                        
+                        <!-- Upload Box (Visible if identity is not approved) -->
+                        <div id="identity-upload-box" class="pt-sm">
+                            <div class="border-2 border-dashed border-outline-variant rounded-xl p-md text-center hover:bg-surface-container-high transition-colors cursor-pointer relative" onclick="triggerFileSelect()">
+                                <input type="file" id="id-file-input" class="hidden" onchange="handleFileChange(this)"/>
+                                <span class="material-symbols-outlined text-[32px] text-primary mb-sm">upload_file</span>
+                                <p id="upload-label" class="font-label-md text-on-surface">Click to upload national ID / Passport</p>
+                                <p class="text-[11px] text-on-surface-variant">Supports PDF, PNG, or JPG (max 5MB)</p>
+                            </div>
+                            <button onclick="submitVerifyIdentity()" id="verify-id-btn" class="mt-md w-full bg-primary text-on-primary font-bold py-md rounded-xl hover:bg-primary-container active:scale-95 transition-all shadow-md flex items-center justify-center gap-sm">
+                                <span class="material-symbols-outlined text-[20px]">verified_user</span>
+                                <span>Verify Identity Now</span>
+                            </button>
+                        </div>
+
+                        <!-- Approved Alert (Visible when Approved) -->
+                        <div id="identity-approved-alert" class="hidden p-sm bg-green-100 text-green-800 rounded-xl flex items-center gap-xs font-semibold text-label-sm">
+                            <span class="material-symbols-outlined text-[18px]">verified</span>
+                            <span>Your identity is verified! You can proceed with the booking.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payment Form -->
+            <section class="bg-surface-container-low dark:bg-surface-container-lowest rounded-[1.5rem] p-lg border border-outline-variant/20 space-y-md">
+                <h2 class="font-headline-sm">Pay with Credit Card</h2>
+                
+                <form id="payment-form" onsubmit="handleConfirmBooking(event)" class="space-y-md">
+                    <div>
+                        <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-xs">Cardholder Name</label>
+                        <input type="text" class="w-full bg-surface border border-outline-variant rounded-xl px-md py-sm focus:ring-primary focus:border-primary text-on-surface" required placeholder="John Doe"/>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-xs">Card Number</label>
+                            <input type="text" class="w-full bg-surface border border-outline-variant rounded-xl px-md py-sm focus:ring-primary focus:border-primary text-on-surface" required placeholder="1234 5678 1234 5678" pattern="[0-9 ]{12,19}"/>
+                        </div>
+                        <div class="grid grid-cols-2 gap-sm">
+                            <div>
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-xs">Expiry</label>
+                                <input type="text" class="w-full bg-surface border border-outline-variant rounded-xl px-md py-sm focus:ring-primary focus:border-primary text-on-surface" required placeholder="MM/YY" pattern="[0-9]{2}/[0-9]{2}"/>
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant mb-xs">CVV</label>
+                                <input type="password" class="w-full bg-surface border border-outline-variant rounded-xl px-md py-sm focus:ring-primary focus:border-primary text-on-surface" required placeholder="123" pattern="[0-9]{3}"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="confirm-booking-btn" class="w-full bg-primary text-on-primary font-bold py-md rounded-xl hover:bg-primary-container active:scale-95 transition-all shadow-md disabled:bg-outline-variant disabled:text-on-surface-variant disabled:cursor-not-allowed">
+                        Confirm Booking
+                    </button>
+                </form>
+            </section>
+        </div>
+
+        <!-- Right Column: Booking Summary Sticky -->
+        <div class="w-full lg:w-96">
+            <div class="bg-surface-container-low dark:bg-surface-container-lowest border border-outline-variant/30 rounded-[1.5rem] p-lg shadow-lg space-y-md sticky top-28">
+                <div class="flex gap-md">
+                    <img id="summary-img" class="w-24 h-24 rounded-xl object-cover shrink-0" src="" alt="Property summary"/>
+                    <div class="min-w-0">
+                        <p id="summary-category" class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Apartments</p>
+                        <h3 id="summary-title" class="font-label-md text-on-surface truncate">Property Title</h3>
+                        <p id="summary-city" class="text-[12px] text-on-surface-variant">Lillehammer</p>
+                        <div class="flex items-center gap-xs text-[12px] mt-xs">
+                            <span class="material-symbols-outlined text-primary filled-icon text-[14px]">star</span>
+                            <span id="summary-rating" class="font-bold">4.92</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-px bg-outline-variant/20"></div>
+
+                <h3 class="font-label-md text-on-surface">Price Details</h3>
+                <div class="space-y-sm text-on-surface-variant text-label-md">
+                    <div class="flex justify-between">
+                        <span id="summary-nights-text">$340 x 5 nights</span>
+                        <span id="summary-base-price">$1,700</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Service Fee (10%)</span>
+                        <span id="summary-service-fee">$170</span>
+                    </div>
+                    <div class="h-px bg-outline-variant/20"></div>
+                    <div class="flex justify-between text-on-surface font-bold text-headline-sm">
+                        <span>Total (USD)</span>
+                        <span id="summary-total">$1,870</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script src="app.js"></script>
+<script>
+    let checkoutProp = null;
+    let checkIn = '';
+    let checkOut = '';
+    let guests = 1;
+    let nightsCount = 1;
+    let finalTotal = 0;
+    let fileSelected = false;
+    let selectedFile = null;
+
+    function getQueryParam(param) {
+        return new URLSearchParams(window.location.search).get(param);
+    }
+
+    async function initCheckout() {
+        // Enforce login
+        const user = Auth.getUser();
+        if (!user) {
+            HabittoUI.toggleAuthModal(true, 'login');
+            return;
+        }
+
+        const propId = getQueryParam('propertyId');
+        checkIn  = getQueryParam('checkIn');
+        checkOut = getQueryParam('checkOut');
+        guests   = parseInt(getQueryParam('guests') || '1');
+
+        if (!propId || !checkIn || !checkOut) {
+            alert('Missing booking parameters.');
+            window.location.href = 'home.html';
+            return;
+        }
+
+        try {
+            checkoutProp = await HabittoAPI.getProperty(propId);
+        } catch (e) {
+            alert('Could not load property. Is the API running?');
+            return;
+        }
+
+        if (!checkoutProp) {
+            alert('Property not found.');
+            window.location.href = 'home.html';
+            return;
+        }
+
+        const d1 = new Date(checkIn);
+        const d2 = new Date(checkOut);
+        nightsCount = Math.ceil((d2 - d1) / (1000 * 60 * 60 * 24));
+        if (nightsCount <= 0) nightsCount = 1;
+
+        renderCheckout();
+        updateIdentityVerificationUI(localStorage.getItem(`habitto_identity_${user.id}`) === 'Approved');
+    }
+
+    function renderCheckout() {
+        document.getElementById('stay-dates').textContent = `${formatDate(checkIn)} - ${formatDate(checkOut)}`;
+        document.getElementById('stay-guests').textContent = `${guests} guest${guests > 1 ? 's' : ''}`;
+
+        const images = checkoutProp.images || ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80'];
+        document.getElementById('summary-img').src = images[0];
+        document.getElementById('summary-category').textContent = checkoutProp.category || 'Property';
+        document.getElementById('summary-title').textContent = checkoutProp.title;
+        document.getElementById('summary-city').textContent = checkoutProp.city;
+        document.getElementById('summary-rating').textContent = checkoutProp.rating || '5.0';
+
+        const basePrice = checkoutProp.nightlyRate * nightsCount;
+        const serviceFee = Math.round(basePrice * 0.1);
+        finalTotal = basePrice + serviceFee;
+
+        document.getElementById('summary-nights-text').textContent = `$${checkoutProp.nightlyRate} x ${nightsCount} nights`;
+        document.getElementById('summary-base-price').textContent = `$${basePrice.toLocaleString()}`;
+        document.getElementById('summary-service-fee').textContent = `$${serviceFee.toLocaleString()}`;
+        document.getElementById('summary-total').textContent = `$${finalTotal.toLocaleString()}`;
+    }
+
+    function formatDate(dateStr) {
+        return new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function updateIdentityVerificationUI(verified) {
+        const iconDiv = document.getElementById('identity-status-icon');
+        const desc = document.getElementById('identity-desc');
+        const uploadBox = document.getElementById('identity-upload-box');
+        const approvedAlert = document.getElementById('identity-approved-alert');
+        const confirmBtn = document.getElementById('confirm-booking-btn');
+
+        if (verified) {
+            iconDiv.className = 'p-2 rounded-full bg-green-100 text-green-600 shrink-0';
+            iconDiv.innerHTML = `<span class="material-symbols-outlined text-[28px]">verified</span>`;
+            desc.textContent = 'Your identity is approved. You are ready to book.';
+            uploadBox.classList.add('hidden');
+            approvedAlert.classList.remove('hidden');
+            confirmBtn.disabled = false;
+        } else {
+            iconDiv.className = 'p-2 rounded-full bg-amber-100 text-amber-600 shrink-0';
+            iconDiv.innerHTML = `<span class="material-symbols-outlined text-[28px]">gpp_maybe</span>`;
+            desc.textContent = 'Upload a valid government ID to verify your identity before booking.';
+            uploadBox.classList.remove('hidden');
+            approvedAlert.classList.add('hidden');
+            confirmBtn.disabled = true;
+        }
+    }
+
+    function triggerFileSelect() {
+        document.getElementById('id-file-input').click();
+    }
+
+    function handleFileChange(input) {
+        if (input.files && input.files[0]) {
+            fileSelected = true;
+            selectedFile = input.files[0];
+            document.getElementById('upload-label').textContent = `Document chosen: ${input.files[0].name}`;
+            document.getElementById('upload-label').className = 'font-label-md text-primary font-bold';
+        }
+    }
+
+    async function submitVerifyIdentity() {
+        if (!fileSelected || !selectedFile) {
+            alert('Please select a document file first.');
+            return;
+        }
+
+        const user = Auth.getUser();
+        const btn = document.getElementById('verify-id-btn');
+        btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Verifying document...</span>`;
+        btn.disabled = true;
+
+        try {
+            await HabittoAPI.verifyIdentity(user.id, selectedFile);
+            localStorage.setItem(`habitto_identity_${user.id}`, 'Approved');
+            btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">verified_user</span><span>Verified!</span>`;
+            updateIdentityVerificationUI(true);
+        } catch (e) {
+            localStorage.setItem(`habitto_identity_${user.id}`, 'Rejected');
+            // Backend auto-approves in the demo handler; if it still errors, show message
+            btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">verified_user</span><span>Verify Identity Now</span>`;
+            btn.disabled = false;
+            alert('Verification error: ' + e.message);
+        }
+    }
+
+    async function handleConfirmBooking(e) {
+        e.preventDefault();
+        const user = Auth.getUser();
+        const btn = document.getElementById('confirm-booking-btn');
+        btn.disabled = true;
+        btn.textContent = 'Confirming...';
+
+        try {
+            await HabittoAPI.createBooking({
+                userId: user.id,
+                propertyId: checkoutProp.id,
+                checkIn:  checkIn,   // YYYY-MM-DD
+                checkOut: checkOut   // YYYY-MM-DD
+            });
+
+            // Show success modal
+            document.getElementById('booking-success').classList.remove('hidden');
+            document.getElementById('booking-success').classList.add('flex');
+
+            setTimeout(() => {
+                window.location.href = 'trips.html';
+            }, 2200);
+        } catch (e) {
+            btn.disabled = false;
+            btn.textContent = 'Confirm Booking';
+            alert('Booking failed: ' + e.message);
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        initCheckout();
+    });
+</script>
+</body>
+</html>
+

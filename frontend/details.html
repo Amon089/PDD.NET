@@ -1,0 +1,563 @@
+﻿<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HabitTo | Property Details</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-dim": "#d3daea",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#d3bbff",
+                "on-primary-container": "#ede0ff",
+                "secondary": "#575e70",
+                "primary-fixed-dim": "#d2bbff",
+                "inverse-on-surface": "#ebf1ff",
+                "on-surface": "#151c27",
+                "secondary-container": "#d9dff5",
+                "on-surface-variant": "#4a4455",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#ede1ff",
+                "tertiary-fixed": "#ebddff",
+                "on-primary-fixed-variant": "#5a00c6",
+                "on-error-container": "#93000a",
+                "tertiary-container": "#7c3de8",
+                "tertiary": "#6316cf",
+                "surface-bright": "#f9f9ff",
+                "surface": "#f9f9ff",
+                "primary": "#630ed4",
+                "on-primary": "#ffffff",
+                "on-error": "#ffffff",
+                "on-background": "#151c27",
+                "surface-container-highest": "#dce2f3",
+                "outline-variant": "#ccc3d8",
+                "outline": "#7b7487",
+                "surface-container-high": "#e2e8f8",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#404758",
+                "primary-fixed": "#eaddff",
+                "on-primary-fixed": "#25005a",
+                "background": "#f9f9ff",
+                "primary-container": "#7c3aed",
+                "on-tertiary-fixed-variant": "#5b00c5",
+                "on-secondary-container": "#5c6274",
+                "error": "#ba1a1a",
+                "surface-variant": "#dce2f3",
+                "error-container": "#ffdad6",
+                "surface-container": "#e7eefe",
+                "on-secondary-fixed": "#141b2b",
+                "on-tertiary-fixed": "#250059",
+                "inverse-primary": "#d2bbff",
+                "surface-tint": "#732ee4",
+                "inverse-surface": "#2a313d",
+                "secondary-fixed": "#dce2f7",
+                "surface-container-low": "#f0f3ff",
+                "secondary-fixed-dim": "#c0c6db"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "md": "16px",
+                "xs": "4px",
+                "base": "4px",
+                "lg": "24px",
+                "sm": "8px",
+                "xl": "32px",
+                "gutter": "20px",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "display": ["Inter"],
+                "label-sm": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "label-md": ["Inter"],
+                "headline-sm": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "headline-sm": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #732ee4;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #630ed4;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container transition-colors duration-300">
+
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-white/10 shadow-sm dark:shadow-none h-20 transition-all duration-300">
+    <div class="max-w-container-max mx-auto px-4 md:px-lg flex justify-between items-center h-full gap-md">
+        <div class="flex items-center">
+            <a class="font-display text-headline-sm font-bold text-primary dark:text-primary-fixed-dim" href="home.html">HabitTo</a>
+        </div>
+        
+        <div class="flex items-center gap-md">
+            <div class="hidden lg:flex items-center gap-md">
+                <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="home.html">Explore</a>
+                <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="trips.html">Trips</a>
+                <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="profile.html">Dashboard</a>
+            </div>
+            
+            <div class="flex items-center gap-sm">
+                <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors active:scale-95" id="theme-toggle">
+                    <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+                </button>
+                <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors active:scale-95">
+                    <span class="material-symbols-outlined">language</span>
+                </button>
+                <div class="flex items-center gap-sm border border-outline-variant rounded-full px-2 py-1 hover:shadow-md transition-shadow bg-surface-container-lowest cursor-pointer">
+                    <span class="material-symbols-outlined text-on-surface-variant">menu</span>
+                    <span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-28 pb-xl max-w-container-max mx-auto px-4 md:px-lg">
+    <div id="detail-loading" class="py-xl text-center">
+        <span class="material-symbols-outlined animate-spin text-[48px] text-primary">autorenew</span>
+        <p class="mt-md text-on-surface-variant">Loading accommodation details...</p>
+    </div>
+
+    <div id="detail-error" class="hidden py-xl text-center">
+        <span class="material-symbols-outlined text-[64px] text-error mb-md">gpp_maybe</span>
+        <h2 class="font-headline-md text-on-surface mb-xs">Accommodation not found</h2>
+        <p class="text-on-surface-variant mb-lg">The requested property does not exist or has been removed.</p>
+        <a href="home.html" class="bg-primary text-on-primary px-xl py-md rounded-xl font-bold hover:opacity-90 inline-block shadow-md">Back to Home</a>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div id="detail-content" class="hidden">
+        <!-- Title and Info -->
+        <header class="mb-lg">
+            <h1 id="prop-title" class="font-display text-headline-lg mb-xs">Property Title</h1>
+            <div class="flex flex-wrap items-center justify-between gap-md text-label-md">
+                <div class="flex items-center gap-md">
+                    <div class="flex items-center gap-xs">
+                        <span class="material-symbols-outlined text-primary filled-icon text-[18px]">star</span>
+                        <span id="prop-rating" class="font-bold">4.9</span>
+                        <span class="text-on-surface-variant">(<span id="prop-reviews">120</span> reviews)</span>
+                    </div>
+                    <span class="text-outline-variant">â€¢</span>
+                    <button class="underline hover:text-primary transition-colors flex items-center gap-xs">
+                        <span class="material-symbols-outlined text-[16px]">location_on</span>
+                        <span id="prop-location">City, Country</span>
+                    </button>
+                </div>
+                
+                <div class="flex items-center gap-md">
+                    <button class="flex items-center gap-xs hover:text-primary transition-colors" onclick="shareProperty()">
+                        <span class="material-symbols-outlined text-[20px]">share</span>
+                        <span>Share</span>
+                    </button>
+                    <button id="favorite-btn" class="flex items-center gap-xs hover:text-primary transition-colors" onclick="toggleFavoriteDetail()">
+                        <span id="favorite-icon" class="material-symbols-outlined text-[20px]">favorite</span>
+                        <span id="favorite-text">Save</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Gallery Collage -->
+        <section class="grid grid-cols-1 md:grid-cols-4 gap-sm rounded-[1.5rem] overflow-hidden mb-xl aspect-[2/1] max-h-[450px]">
+            <div class="md:col-span-2 overflow-hidden h-full">
+                <img id="img-main" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" src="" alt="Main photo"/>
+            </div>
+            <div class="hidden md:block overflow-hidden h-full">
+                <img id="img-sub1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" src="" alt="Sub photo 1"/>
+            </div>
+            <div class="hidden md:block overflow-hidden h-full flex flex-col gap-sm">
+                <div class="h-1/2 overflow-hidden">
+                    <img id="img-sub2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" src="" alt="Sub photo 2"/>
+                </div>
+                <div class="h-1/2 overflow-hidden relative">
+                    <img id="img-sub3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" src="" alt="Sub photo 3"/>
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white font-bold text-label-md cursor-pointer hover:bg-black/50 transition-colors">
+                        <span class="material-symbols-outlined mr-xs">photo_library</span>
+                        <span>Show all</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Layout -->
+        <div class="flex flex-col lg:flex-row gap-xl items-start">
+            
+            <!-- Left Panel: Details -->
+            <div class="flex-1 space-y-xl">
+                <!-- Host Intro -->
+                <div class="flex items-center justify-between pb-lg border-b border-outline-variant/20">
+                    <div>
+                        <h2 class="font-headline-sm text-on-surface mb-xs">Hosted by <span id="host-name">Host Name</span></h2>
+                        <p id="prop-features" class="text-on-surface-variant">4 Guests â€¢ 2 Bedrooms â€¢ 2 Beds â€¢ 1 Bath</p>
+                    </div>
+                    <img id="host-avatar" class="w-14 h-14 rounded-full object-cover border-2 border-primary" src="" alt="Host avatar"/>
+                </div>
+
+                <!-- Description -->
+                <div class="pb-lg border-b border-outline-variant/20">
+                    <h3 class="font-headline-sm mb-md">About this space</h3>
+                    <p id="prop-desc" class="text-on-surface-variant leading-relaxed">Description goes here...</p>
+                </div>
+
+                <!-- Amenities -->
+                <div class="pb-lg border-b border-outline-variant/20">
+                    <h3 class="font-headline-sm mb-md">What this place offers</h3>
+                    <div id="amenities-container" class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+                        <!-- Amenities list dynamically added -->
+                    </div>
+                </div>
+                
+                <!-- Map / Location -->
+                <div>
+                    <h3 class="font-headline-sm mb-md">Where you'll be</h3>
+                    <div class="bg-surface-container-high rounded-[1.5rem] p-lg border border-outline-variant/20 h-64 flex flex-col items-center justify-center text-center">
+                        <span class="material-symbols-outlined text-[48px] text-primary mb-md">map</span>
+                        <h4 class="font-label-md text-on-surface mb-xs">Location coordinates</h4>
+                        <p class="text-on-surface-variant text-label-sm">Latitude: <span id="lat-val">0</span>, Longitude: <span id="lng-val">0</span></p>
+                        <p class="text-[12px] text-primary mt-sm underline cursor-pointer">View on Google Maps</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Sticky Booking Card -->
+            <div class="w-full lg:w-96 lg:sticky lg:top-28">
+                <div class="bg-surface-container-lowest dark:bg-inverse-surface border border-outline-variant/30 rounded-[1.5rem] p-lg shadow-xl space-y-md">
+                    <div class="flex justify-between items-end">
+                        <p class="text-on-surface"><span id="sidebar-rate" class="font-display text-headline-sm font-bold">$340</span> <span class="text-on-surface-variant font-normal">night</span></p>
+                        <div class="flex items-center gap-xs text-label-md">
+                            <span class="material-symbols-outlined text-primary filled-icon text-[16px]">star</span>
+                            <span id="sidebar-rating" class="font-bold">4.9</span>
+                        </div>
+                    </div>
+
+                    <!-- Date Selection Form -->
+                    <div class="border border-outline-variant rounded-xl divide-y divide-outline-variant overflow-hidden">
+                        <div class="grid grid-cols-2">
+                            <div class="p-sm">
+                                <label class="block text-[9px] font-bold uppercase tracking-wider text-on-surface-variant">Check-In</label>
+                                <input id="book-checkin" type="date" class="w-full border-none p-0 focus:ring-0 bg-transparent text-label-md text-on-surface font-semibold" onchange="calculatePrices()"/>
+                            </div>
+                            <div class="p-sm border-l border-outline-variant">
+                                <label class="block text-[9px] font-bold uppercase tracking-wider text-on-surface-variant">Check-Out</label>
+                                <input id="book-checkout" type="date" class="w-full border-none p-0 focus:ring-0 bg-transparent text-label-md text-on-surface font-semibold" onchange="calculatePrices()"/>
+                            </div>
+                        </div>
+                        <div class="p-sm">
+                            <label class="block text-[9px] font-bold uppercase tracking-wider text-on-surface-variant">Guests</label>
+                            <select id="book-guests" class="w-full border-none p-0 focus:ring-0 bg-transparent text-label-md text-on-surface font-semibold">
+                                <option value="1">1 Guest</option>
+                                <option value="2" selected>2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Price Calculator Section -->
+                    <div id="price-calc-container" class="hidden space-y-sm pt-sm border-t border-outline-variant/20">
+                        <div class="flex justify-between text-on-surface-variant">
+                            <span id="calc-nights-text">$340 x 5 nights</span>
+                            <span id="calc-base-price">$1,700</span>
+                        </div>
+                        <div class="flex justify-between text-on-surface-variant">
+                            <span>Service Fee (10%)</span>
+                            <span id="calc-service-fee">$170</span>
+                        </div>
+                        <div class="h-px bg-outline-variant/30 my-sm"></div>
+                        <div class="flex justify-between text-on-surface font-bold text-headline-sm">
+                            <span>Total</span>
+                            <span id="calc-total">$1,870</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Action -->
+                    <button onclick="handleBookingSubmit()" class="w-full bg-primary text-on-primary font-bold py-md rounded-xl hover:bg-primary-container active:scale-95 transition-all shadow-md">
+                        Book Now
+                    </button>
+                    
+                    <p class="text-center text-[12px] text-on-surface-variant">You won't be charged yet</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<script src="app.js"></script>
+<script>
+    let currentProp = null;
+    let wishlistIds = [];
+
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    async function initPage() {
+        const propId = getQueryParam('id');
+        if (!propId) { showError(); return; }
+
+        try {
+            currentProp = await HabittoAPI.getProperty(propId);
+            if (!currentProp) { showError(); return; }
+
+            // Load wishlist state
+            const user = Auth.getUser();
+            if (user) {
+                try {
+                    const items = await HabittoAPI.getWishlist(user.id);
+                    wishlistIds = items.map(w => w.propertyId);
+                } catch { wishlistIds = []; }
+            }
+
+            renderDetails();
+        } catch (e) {
+            showError();
+        }
+    }
+
+    function showError() {
+        document.getElementById('detail-loading').classList.add('hidden');
+        document.getElementById('detail-error').classList.remove('hidden');
+    }
+
+    function renderDetails() {
+        document.getElementById('detail-loading').classList.add('hidden');
+        document.getElementById('detail-content').classList.remove('hidden');
+
+        const images = currentProp.images || ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80'];
+        const amenities = currentProp.amenities || ['Wifi', 'Air Conditioning', 'Kitchen', 'Parking'];
+        const features = currentProp.features || ['2 Guests', '1 Bedroom', '1 Bed', '1 Bath'];
+        const owner = currentProp.owner || { fullName: 'HabitTo Host', avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80' };
+
+        // Fill Text & Info
+        document.getElementById('prop-title').textContent = currentProp.title;
+        document.title = `HabitTo | ${currentProp.title}`;
+        document.getElementById('prop-rating').textContent = currentProp.rating || '5.0';
+        document.getElementById('prop-reviews').textContent = currentProp.reviewsCount || '12';
+        document.getElementById('prop-location').textContent = currentProp.city;
+        document.getElementById('prop-desc').textContent = currentProp.description || 'Premium accommodation offering high-end amenities in a breathtaking location. Carefully designed for comfort and relaxation.';
+        document.getElementById('prop-features').textContent = features.join(' â€¢ ');
+
+        // Set Images
+        document.getElementById('img-main').src = images[0];
+        document.getElementById('img-sub1').src = images[1] || images[0];
+        document.getElementById('img-sub2').src = images[2] || images[0];
+        document.getElementById('img-sub3').src = images[0];
+
+        // Host Info
+        document.getElementById('host-name').textContent = owner.fullName;
+        document.getElementById('host-avatar').src = owner.avatar;
+
+        // Amenities
+        const amenitiesGrid = document.getElementById('amenities-container');
+        amenitiesGrid.innerHTML = '';
+        amenities.forEach(amenity => {
+            const item = document.createElement('div');
+            item.className = 'flex items-center gap-sm text-on-surface-variant';
+            let icon = 'check_circle';
+            const cleanAme = amenity.toLowerCase();
+            if (cleanAme.includes('pool')) icon = 'pool';
+            else if (cleanAme.includes('fireplace')) icon = 'fireplace';
+            else if (cleanAme.includes('wifi')) icon = 'wifi';
+            else if (cleanAme.includes('parking')) icon = 'local_parking';
+            else if (cleanAme.includes('view')) icon = 'visibility';
+            else if (cleanAme.includes('kitchen')) icon = 'restaurant';
+            else if (cleanAme.includes('hot tub')) icon = 'hot_tub';
+            else if (cleanAme.includes('ski')) icon = 'downhill_skiing';
+            else if (cleanAme.includes('ac') || cleanAme.includes('air')) icon = 'ac_unit';
+            item.innerHTML = `
+                <span class="material-symbols-outlined text-[24px] text-primary">${icon}</span>
+                <span>${amenity}</span>
+            `;
+            amenitiesGrid.appendChild(item);
+        });
+
+        // Coordinates
+        if (currentProp.latitude && currentProp.longitude) {
+            document.getElementById('lat-val').textContent = currentProp.latitude.toFixed(4);
+            document.getElementById('lng-val').textContent = currentProp.longitude.toFixed(4);
+        }
+
+        // Sidebar Rate & Rating
+        document.getElementById('sidebar-rate').textContent = `$${currentProp.nightlyRate}`;
+        document.getElementById('sidebar-rating').textContent = currentProp.rating || '5.0';
+
+        // Pre-fill date fields from Query Params
+        const checkInParam = getQueryParam('checkIn');
+        if (checkInParam) {
+            document.getElementById('book-checkin').value = checkInParam;
+            const d = new Date(checkInParam);
+            d.setDate(d.getDate() + 3);
+            document.getElementById('book-checkout').value = d.toISOString().split('T')[0];
+        } else {
+            const today = new Date();
+            const tomorrow = new Date();
+            tomorrow.setDate(today.getDate() + 2);
+            document.getElementById('book-checkin').value = today.toISOString().split('T')[0];
+            document.getElementById('book-checkout').value = tomorrow.toISOString().split('T')[0];
+        }
+
+        const guestsParam = getQueryParam('guests');
+        if (guestsParam) document.getElementById('book-guests').value = guestsParam;
+
+        updateHeartButton();
+        calculatePrices();
+    }
+
+    function calculatePrices() {
+        const checkinVal = document.getElementById('book-checkin').value;
+        const checkoutVal = document.getElementById('book-checkout').value;
+        const calcContainer = document.getElementById('price-calc-container');
+
+        if (!checkinVal || !checkoutVal) { calcContainer.classList.add('hidden'); return; }
+
+        const d1 = new Date(checkinVal);
+        const d2 = new Date(checkoutVal);
+        const diffDays = Math.ceil((d2 - d1) / (1000 * 60 * 60 * 24));
+
+        if (diffDays <= 0) { calcContainer.classList.add('hidden'); return; }
+
+        calcContainer.classList.remove('hidden');
+        const basePrice = currentProp.nightlyRate * diffDays;
+        const serviceFee = Math.round(basePrice * 0.1);
+        const total = basePrice + serviceFee;
+
+        document.getElementById('calc-nights-text').textContent = `$${currentProp.nightlyRate} x ${diffDays} nights`;
+        document.getElementById('calc-base-price').textContent = `$${basePrice.toLocaleString()}`;
+        document.getElementById('calc-service-fee').textContent = `$${serviceFee.toLocaleString()}`;
+        document.getElementById('calc-total').textContent = `$${total.toLocaleString()}`;
+    }
+
+    function updateHeartButton() {
+        const isFav = wishlistIds.includes(currentProp.id);
+        const icon = document.getElementById('favorite-icon');
+        const text = document.getElementById('favorite-text');
+        if (isFav) {
+            icon.classList.add('filled-icon', 'text-red-500');
+            icon.style.fontVariationSettings = "'FILL' 1";
+            text.textContent = 'Saved';
+        } else {
+            icon.classList.remove('filled-icon', 'text-red-500');
+            icon.style.fontVariationSettings = "'FILL' 0";
+            text.textContent = 'Save';
+        }
+    }
+
+    async function toggleFavoriteDetail() {
+        const user = Auth.getUser();
+        if (!user) { HabittoUI.toggleAuthModal(true, 'login'); return; }
+
+        const isFav = wishlistIds.includes(currentProp.id);
+        try {
+            if (isFav) {
+                await HabittoAPI.removeFromWishlist(user.id, currentProp.id);
+                wishlistIds = wishlistIds.filter(id => id !== currentProp.id);
+            } else {
+                await HabittoAPI.addToWishlist(user.id, currentProp.id);
+                wishlistIds.push(currentProp.id);
+            }
+            updateHeartButton();
+        } catch (e) {
+            alert('Could not update wishlist: ' + e.message);
+        }
+    }
+
+    function shareProperty() {
+        if (navigator.share) {
+            navigator.share({ title: currentProp.title, url: window.location.href });
+        } else {
+            navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied to clipboard!'));
+        }
+    }
+
+    function handleBookingSubmit() {
+        const checkinVal = document.getElementById('book-checkin').value;
+        const checkoutVal = document.getElementById('book-checkout').value;
+        const guestsVal = document.getElementById('book-guests').value;
+
+        if (!checkinVal || !checkoutVal) {
+            alert('Please select dates.');
+            return;
+        }
+
+        const d1 = new Date(checkinVal);
+        const d2 = new Date(checkoutVal);
+        if (d2 <= d1) {
+            alert('Check-Out date must be after Check-In date.');
+            return;
+        }
+
+        // Authentication gate
+        const user = Auth.getUser();
+        if (!user) {
+            HabittoUI.toggleAuthModal(true, 'login');
+            return;
+        }
+
+        window.location.href = `checkout.html?propertyId=${currentProp.id}&checkIn=${checkinVal}&checkOut=${checkoutVal}&guests=${guestsVal}`;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        initPage();
+    });
+</script>
+</body>
+</html>
+

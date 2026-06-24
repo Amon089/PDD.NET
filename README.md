@@ -1,69 +1,285 @@
-# Habitto — Plataforma de Rentas Cortas (Prueba ASP.NET C#)
+# Habitto
 
-## Requisitos previos
-- Docker y Docker Compose instalados.
-- (Solo si vas a generar la migración inicial, ver paso 2) SDK de .NET 10.
+## Descripción General
 
-## Cómo levantar el proyecto
+Habitto es una API de backend para una plataforma de alquiler de estadías de corto plazo. Implementa búsquedas de propiedades, reservas con control de disponibilidad, wishlist, autenticación JWT, verificación de identidad y reportes exportables a Excel.
+
+## Problema de Negocio
+
+Se busca permitir a huéspedes explorar inmuebles, reservar fechas disponibles sin solapamientos y habilitar a dueños a consultar su historial de reservas para generar reportes. El sistema también debe exigir verificación de identidad en la primera reserva.
+
+## Objetivos de la Solución
+
+- Proveer una API modular y mantenible.
+- Garantizar que no existan reservas solapadas sobre un mismo inmueble.
+- Registrar usuarios con credenciales seguras.
+- Permitir verificación de identidad antes de la primera reserva.
+- Mantener la lógica de notificaciones y KYC intercambiable.
+- Exportar reportes de reservas en Excel.
+
+## Arquitectura Implementada
+
+Se utiliza una variante de Clean Architecture con 4 proyectos:
+
+- `Habitto.Domain`: entidades, objetos de valor, excepciones y contratos de repositorio.
+- `Habitto.Application`: casos de uso, commands/queries y puertos de servicios.
+- `Habitto.Infrastructure`: EF Core, repositorios concretos, servicios mocks y exportación Excel.
+- `Habitto.Api`: controllers, configuración de autenticación, Swagger y exposición HTTP.
+
+### Capas y responsabilidades
+
+- Domain: define las reglas de negocio y la invariante de dominio para reservas.
+- Application: orquesta casos de uso, aplica reglas de negocio (por ejemplo, primer reserva con KYC) y envía notificaciones.
+- Infrastructure: implementa acceso a datos y servicios externos/mock.
+- Api: expone endpoints REST y maneja autorización.
+
+### Flujo de dependencias
+
+- `Habitto.Api` depende de `Habitto.Application` y `Habitto.Infrastructure`.
+- `Habitto.Application` depende de `Habitto.Domain`.
+- `Habitto.Infrastructure` depende de `Habitto.Domain` y `Habitto.Application`.
+- Las abstracciones residen en `Habitto.Domain`/`Habitto.Application`, las implementaciones en `Habitto.Infrastructure`.
+
+### Principios SOLID
+
+- Single Responsibility: cada proyecto y clase tiene una responsabilidad clara.
+- Open/Closed: servicios de KYC y notificaciones pueden reemplazarse sin editar la lógica de aplicación.
+- Liskov/Substitution: las interfaces de repositorios permiten cambiar implementaciones.
+- Interface Segregation: repositorios pequeños y específicos.
+- Dependency Inversion: Application depende de interfaces, no de implementaciones.
+
+### Patrones utilizados
+
+- Clean Architecture/Onion Architecture.
+- CQRS con MediatR.
+- Repository Pattern.
+- Dependency Injection.
+- Domain-Driven Design ligero (aggregate root `Property`, value object `DateRange`).
+- Adapter/Strategy para KYC y notificaciones.
+
+## Estructura del Proyecto
+
+```
+./
+├─ docker-compose.yml
+├─ Dockerfile
+├─ frontend/
+├─ src/
+│  ├─ Habitto.Api/
+│  │  ├─ Controllers/
+│  │  │  ├─ AuthController.cs
+│  │  │  ├─ PropertiesAndBookingsControllers.cs
+│  │  │  └─ WishlistIdentityReportsControllers.cs
+│  │  ├─ appsettings.json
+│  │  ├─ Habitto.Api.csproj
+│  │  └─ Program.cs
+│  ├─ Habitto.Application/
+│  │  ├─ Bookings/Commands/CreateBookingCommand.cs
+│  │  ├─ Common/Ports.cs
+│  │  ├─ Identity/VerifyIdentityCommand.cs
+│  │  ├─ Reports/GetOwnerBookingReportQuery.cs
+│  │  ├─ Reports/GetOwnerBookingReportQueryHandler.cs
+│  │  ├─ Wishlist/WishlistCommands.cs
+│  │  └─ Habitto.Application.csproj
+│  ├─ Habitto.Domain/
+│  │  ├─ Entities/AppUser.cs
+│  │  ├─ Entities/Booking.cs
+│  │  ├─ Entities/Property.cs
+│  │  ├─ Entities/WishlistItem.cs
+│  │  ├─ Exceptions/DomainExceptions.cs
+│  │  ├─ Interfaces/Repositories.cs
+│  │  ├─ ValueObjects/DateRange.cs
+│  │  ├─ ValueObjects/Enums.cs
+│  │  └─ ValueObjects/StayPolicy.cs
+│  └─ Habitto.Infrastructure/
+│     ├─ DependencyInjection.cs
+│     ├─ Habitto.Infrastructure.csproj
+│     ├─ Migrations/
+│     │  ├─ 20260623195743_InitialCreate.cs
+│     │  ├─ 20260623195743_InitialCreate.Designer.cs
+│     │  ├─ 20260623202601_FixCoordinatesPrecision.cs
+│     │  ├─ 20260623202601_FixCoordinatesPrecision.Designer.cs
+│     │  └─ HabittoDbContextModelSnapshot.cs
+│     ├─ Persistence/
+│     │  ├─ EntityConfigurations.cs
+│     │  ├─ HabittoDbContext.cs
+│     │  └─ Repositories/Repositories.cs
+│     └─ Services/
+│        ├─ ClosedXmlReportExporter.cs
+│        ├─ MockIdentityVerificationService.cs
+│        └─ MockNotificationService.cs
+```
+
+## Tecnologías Utilizadas
+
+| Categoría | Tecnología | Uso |
+|---|---|---|
+| Plataforma | .NET 10 | Runtime y compilación |
+| Lenguaje | C# | Implementación del backend |
+| Arquitectura | Clean Architecture | Separación de capas |
+| Persistencia | EF Core 9.0 | ORM para SQL Server |
+| Base de datos | SQL Server 2022 | Contenedor de datos |
+| Contenedores | Docker / Docker Compose | Orquestación de API y DB |
+| Autenticación | JWT Bearer | Seguridad de endpoints |
+| Hashing | BCrypt.Net-Next | Hash de contraseñas |
+| Documentación | Swagger / Swashbuckle | API docs |
+| Mediación | MediatR | CQRS patterns |
+| Exportación | ClosedXML | Generación de Excel |
+| Validación | FluentValidation | Paquete instalado (no utilizado actualmente) |
+
+## Requisitos Previos
+
+- Docker
+- Docker Compose
+- .NET 10 SDK (recomendado para compilación local)
+
+## Configuración del Entorno
+
+La configuración principal está en `src/Habitto.Api/appsettings.json`.
+Si usa Docker, la cadena de conexión se sobrescribe desde `docker-compose.yml`.
+
+## Variables de Entorno
+
+- `ConnectionStrings__Default`
+- `Jwt__Key`
+- `Jwt__Issuer`
+- `Jwt__Audience`
+
+## Instalación Local
+
+```bash
+cd src/Habitto.Api
+dotnet restore
+dotnet build
+```
+
+Para ejecutar local:
+
+```bash
+dotnet run --project src/Habitto.Api/Habitto.Api.csproj
+```
+
+> Si ejecutas local, debes tener una instancia SQL Server disponible y ajustar la conexión en `appsettings.json`.
+
+## Ejecución con Docker
 
 ```bash
 docker compose up --build
 ```
 
-Esto levanta:
-- `sqlserver`: SQL Server 2022 en contenedor (puerto 1433), con healthcheck.
-- `api`: la API .NET 10 (puerto 8080), que espera a que SQL Server esté *healthy* y aplica las migraciones de EF Core automáticamente al iniciar (`db.Database.Migrate()` en `Program.cs`).
+Servicios:
+- `sqlserver`: SQL Server 2022 en `localhost:1433`
+- `api`: API en `localhost:8080`
 
-Swagger disponible en: `http://localhost:8080/swagger`
+## Migraciones
 
-## ⚠️ Paso manual pendiente: migración inicial de EF Core
+Migraciones existentes:
+- `20260623195743_InitialCreate`
+- `20260623202601_FixCoordinatesPrecision`
 
-Este entorno de generación de código no tuvo el SDK de .NET instalado, por lo
-que **no se generó la carpeta `Migrations` con la migración inicial**. Antes de
-tu primer `docker compose up`, corre esto una sola vez en tu máquina:
+Para aplicar migraciones manualmente:
 
 ```bash
 cd src/Habitto.Infrastructure
-dotnet ef migrations add InitialCreate --startup-project ../Habitto.Api
+dotnet ef database update --startup-project ../Habitto.Api
 ```
 
-Si no tienes la herramienta `dotnet-ef`:
-```bash
-dotnet tool install --global dotnet-ef
-```
+> `Program.cs` tiene la llamada a `db.Database.Migrate()` comentada, por lo que no se aplica automáticamente al iniciar.
 
-Sin este paso, `db.Database.Migrate()` no tendrá nada que aplicar y la API
-fallará al iniciar por falta de tablas.
+## Base de Datos
 
-## Arquitectura
+- Motor: SQL Server
+- Base: `HabittoDb`
+- Usuario: `sa`
+- Contraseña: `Habitto#2026Strong`
 
-Clean Architecture en 4 proyectos, con dependencias apuntando siempre hacia el centro:
+> No hay soporte PostgreSQL en el código actual.
 
-```
-Habitto.Api  -> Habitto.Application -> Habitto.Domain
-       \-> Habitto.Infrastructure -------/
-```
+## Credenciales de Prueba
 
-- **Domain**: entidades (`Property`, `Booking`, `AppUser`, `WishlistItem`), Value Objects (`DateRange`, `StayPolicy`) e invariantes de negocio. Cero dependencias externas.
-- **Application**: casos de uso con MediatR (Commands/Queries), puertos (`IIdentityVerificationService`, `INotificationService`) que Infrastructure implementa.
-- **Infrastructure**: EF Core + SQL Server, repositorios, mocks de KYC/notificaciones, exportador Excel (ClosedXML).
-- **Api**: controllers delgados, JWT, Swagger.
+No hay datos de prueba precargados. Usa `/api/auth/register` para crear un usuario.
 
-### Decisiones técnicas relevantes
+## Endpoints Disponibles
 
-1. **No-double-booking como invariante de dominio, no como validación de capa superior.**
-   La regla vive en `PropertyBookingExtensions.CreateBooking` (extensión sobre el aggregate root `Property`), usando `DateRange.Overlaps`. Cualquier punto de entrada que cree una reserva pasa por este único camino — no es posible *saltarse* la regla desde un controller descuidado.
+| Método | Ruta | Autorización | Descripción |
+|---|---|---|---|
+| POST | `/api/auth/register` | No | Registrar usuario |
+| POST | `/api/auth/login` | No | Login y token JWT |
+| GET | `/api/properties` | No | Buscar propiedades |
+| GET | `/api/properties/{id}` | No | Detalle de propiedad |
+| POST | `/api/properties` | Sí | Crear propiedad |
+| DELETE | `/api/properties/{id}` | Sí | Desactivar propiedad |
+| POST | `/api/bookings` | Sí | Crear reserva |
+| GET | `/api/bookings/user/{userId}` | Sí | Reservas de usuario |
+| POST | `/api/wishlist` | Sí | Agregar a wishlist |
+| DELETE | `/api/wishlist` | Sí | Remover wishlist |
+| GET | `/api/wishlist/{userId}` | Sí | Consultar wishlist |
+| POST | `/api/identity/verify` | Sí | Verificar identidad |
+| GET | `/api/reports/owner/{ownerId}` | Sí | Reporte de reservas |
+| GET | `/api/reports/owner/{ownerId}/excel` | Sí | Exportar reporte Excel |
 
-2. **KYC y Notificaciones como puertos reemplazables (Strategy/Adapter).**
-   `IIdentityVerificationService` e `INotificationService` viven en Application. Hoy están implementados como mocks en Infrastructure (`MockIdentityVerificationService`, `MockNotificationService`). Pasar a un proveedor real (Azure Face API, SendGrid, un microservicio en Node/Laravel) es agregar una clase nueva y cambiar 2 líneas de registro en `DependencyInjection.cs` — Domain y Application no se tocan.
+## Casos de Uso Implementados
 
-3. **Auth diferida.** `PropertiesController.Search` es `[AllowAnonymous]`; `BookingsController`, `WishlistController` e `IdentityController` exigen `[Authorize]`. Esto refleja literalmente el requerimiento: explorar sin login, autenticarse solo al reservar/favoritear permanente/pagar.
+- Registro y login con JWT.
+- Búsqueda de propiedades con filtros por ciudad y fechas.
+- Creación y desactivación de propiedades.
+- Reservas con cálculo de precio y validación de disponibilidad.
+- Prevención de double-booking dentro del agregado `Property`.
+- Verificación de identidad en la primera reserva.
+- Wishlist CRUD.
+- Reportes de dueños y exportación a Excel.
+- Notificaciones mock (email logeado e in-app persistido).
 
-4. **Privacidad del documento de identidad.** El flujo de KYC procesa la imagen en memoria y nunca la persiste (ver comentario en `VerifyIdentityCommandHandler`). No hay tabla de "documentos subidos".
+## Flujo de Negocio
 
-### Limitaciones conocidas (transparencia, no se escondieron)
+1. El usuario se registra y obtiene un token JWT.
+2. Busca inmuebles por ciudad y disponibilidad.
+3. Si es la primera reserva, necesita identidad aprobada.
+4. Se crea la reserva solo si no hay solapamientos.
+5. Se envía notificación mock al usuario.
+6. El dueño puede consultar y exportar reportes.
 
-- `CreateBookingCommandHandler.HasAnyPreviousBookingAsync` está **stub** (`return false` siempre). La regla de "KYC obligatorio solo en la primera reserva" está modelada pero la detección de "primera reserva" no quedó conectada a una consulta real por falta de tiempo (alcance de 8h). Para completarla: agregar `IBookingRepository.HasAnyBookingByUserAsync(userId)`.
-- `GetOwnerBookingReportQueryHandler` resuelve usuario e inmueble por reserva en un loop (N+1). Aceptable para el volumen de datos académico; en producción se reemplazaría por un `Include`/proyección SQL directa.
-- No se incluyeron pruebas unitarias por restricción de tiempo. El candidato natural a testear primero sería `DateRange.Overlaps` y `PropertyBookingExtensions.CreateBooking` (es donde vive el riesgo real de negocio).
-- Las versiones de paquetes NuGet (EF Core 9.0.0 contra `net10.0`, ClosedXML, MediatR) se escribieron de memoria sin poder ejecutar `dotnet restore` en este entorno — si al restaurar localmente alguna versión no existe en NuGet, sube/baja el patch version, la API pública no debería cambiar.
+## Decisiones Técnicas
+
+- Manejo de reservas: la creación vive en `Property.CreateBooking`, preservando la invariante de dominio.
+- Prevención de double-booking: `DateRange.Overlaps` define solapamiento entre reservas.
+- Seguridad: JWT en `Program.cs`, hashing con BCrypt y autorización de endpoints.
+- KYC: implementado como puerto, actualmente con mock en `MockIdentityVerificationService`.
+- Dashboard: no existe UI de dashboard; hay endpoints de reporte.
+- Exportaciones: `ClosedXmlReportExporter` genera archivos Excel.
+- Notificaciones: `MockNotificationService` simula email y notificaciones in-app.
+
+## Seguridad
+
+- Contraseñas almacenadas con BCrypt.
+- Autenticación JWT.
+- CORS está configurado como `AllowAnyOrigin`, útil para demo pero no recomendado en producción.
+- No existe verificación de propiedad explícita en todos los endpoints; se confía en el `UserId` enviado por el cliente.
+
+## Observabilidad
+
+- Swagger habilitado en `/swagger`.
+- Logging básico para notificaciones mock.
+- No hay métricas ni seguimiento distribuido implementados.
+
+## Mejoras Implementadas
+
+- Clean Architecture con separación de capas.
+- Invariante de dominio para reservas.
+- Servicios intercambiables de KYC y notificaciones.
+- Reportes exportables.
+- Autenticación y manejo de usuarios.
+
+## Mejoras Futuras
+
+- Añadir pruebas unitarias e integración.
+- Habilitar migraciones automáticas o documentar la aplicación manualmente.
+- Optimizar reportes para evitar N+1.
+- Reemplazar mocks de KYC y notificaciones con integraciones reales.
+- Restringir recursos por claims de usuario.
+- Añadir validación de entrada con FluentValidation.
+- Implementar seeders de datos de ejemplo.
+
+## Conclusiones
+
+El proyecto está bien diseñado a nivel de arquitectura y cubre la mayoría de los requisitos principales. Sin embargo, hay oportunidades claras de mejora en pruebas, seguridad de autorización, automatización de migraciones y reemplazo de mocks por integraciones reales.

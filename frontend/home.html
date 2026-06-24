@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HabitTo | Premium Property Discovery</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind Configuration -->
-<script id="tailwind-config">
+﻿<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HabitTo | Premium Property Discovery</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -103,7 +104,7 @@
         },
       }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             display: inline-block;
@@ -138,342 +139,334 @@
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container transition-colors duration-300">
+
 <!-- Top Navigation Bar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-white/10 shadow-sm dark:shadow-none h-20 transition-all duration-300">
-<div class="max-w-container-max mx-auto px-4 md:px-lg flex justify-between items-center h-full gap-md">
-<!-- Brand Logo -->
-<div class="flex items-center">
-<a class="font-display text-headline-sm font-bold text-primary dark:text-primary-fixed-dim" href="#">HabitTo</a>
-</div>
-<!-- Central Search Pill (Visible on md+) -->
-<div class="hidden md:flex flex-1 max-w-md items-center justify-between px-md py-sm border border-outline-variant rounded-full shadow-sm hover:shadow-md transition-shadow cursor-pointer bg-surface-container-lowest">
-<button class="font-label-md text-label-md px-2 border-r border-outline-variant text-on-surface">Anywhere</button>
-<button class="font-label-md text-label-md px-2 border-r border-outline-variant text-on-surface">Any week</button>
-<button class="font-label-md text-label-md px-2 text-on-surface-variant">Add guests</button>
-<div class="bg-primary text-on-primary p-2 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-[18px]">search</span>
-</div>
-</div>
-<!-- Navigation Links & Actions -->
-<div class="flex items-center gap-md">
-<div class="hidden lg:flex items-center gap-md">
-<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:text-primary transition-colors duration-200" href="#">Explore</a>
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">Experiences</a>
-<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="#">Online Hosts</a>
-</div>
-<div class="flex items-center gap-sm">
-<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors active:scale-95" id="theme-toggle">
-<span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
-</button>
-<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors active:scale-95">
-<span class="material-symbols-outlined">language</span>
-</button>
-<div class="flex items-center gap-sm border border-outline-variant rounded-full px-2 py-1 hover:shadow-md transition-shadow bg-surface-container-lowest cursor-pointer">
-<span class="material-symbols-outlined text-on-surface-variant">menu</span>
-<span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
-</div>
-</div>
-</div>
-</div>
-</nav>
-<main class="pt-24 pb-xl">
-<!-- Hero Search Section -->
-<section class="max-w-container-max mx-auto px-4 md:px-lg mb-xl">
-<div class="relative rounded-[2rem] overflow-hidden h-[500px] flex items-center justify-center">
-<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, high-resolution photograph of a modern glass villa nestled in a misty pine forest during the blue hour. The warm interior lights glow softly against the cool tones of the dusk. The composition is wide and breathtaking, evoking a sense of premium travel and peaceful luxury in a minimalist light-mode aesthetic with purple accent lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCo0TOnjrZTbhPsbUv543ZOSSj-b_Sjv_chMj9LXvA7UAL8EEvc-Ciclca3IjN_cCJn8MBiOkHiTb4A9J1g7qGr43yj4D4XOzRtTWaFJ2PheKN6Z4z1AFyUYRHkFbFBkObzAEHEI4CrZiIS2Zhu3DqbFhAoMySJASH3YO_z8VSmCK_XrXXWadvRErVGfB6MmxMqIcfVnb_S2swnTZWDiK-fxwvzdRKoQBA-iQHdl3Oiv8vF4-Slc2FVRjFZcQvUXL24ClTj1Z0no0')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
-<div class="relative z-10 w-full max-w-3xl px-md">
-<h1 class="text-white font-display text-display mb-xl text-center drop-shadow-lg">Where to next?</h1>
-<!-- Expanded Search Component -->
-<div class="bg-surface-container-lowest rounded-full p-2 shadow-2xl flex flex-col md:flex-row items-center gap-2 border border-white/20">
-<div class="flex-1 w-full px-lg py-md hover:bg-surface-container-low rounded-full transition-colors group cursor-pointer">
-<label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Where</label>
-<input class="bg-transparent border-none p-0 focus:ring-0 w-full text-on-surface placeholder:text-outline font-label-md" placeholder="Search destinations" type="text"/>
-</div>
-<div class="hidden md:block w-px h-10 bg-outline-variant"></div>
-<div class="flex-1 w-full px-lg py-md hover:bg-surface-container-low rounded-full transition-colors cursor-pointer">
-<label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Check in</label>
-<span class="text-outline font-label-md">Add dates</span>
-</div>
-<div class="hidden md:block w-px h-10 bg-outline-variant"></div>
-<div class="flex-1 w-full px-lg py-md hover:bg-surface-container-low rounded-full transition-colors cursor-pointer">
-<label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Who</label>
-<span class="text-outline font-label-md">Add guests</span>
-</div>
-<button class="w-full md:w-auto bg-primary text-on-primary hover:bg-primary-container px-xl py-md rounded-full font-bold flex items-center justify-center gap-sm transition-all active:scale-95 shadow-lg">
-<span class="material-symbols-outlined">search</span>
-<span>Search</span>
-</button>
-</div>
-</div>
-</div>
-</section>
-<!-- Category Filters -->
-<section class="sticky top-20 z-40 bg-background/95 backdrop-blur-sm border-b border-outline-variant/20 mb-xl py-md overflow-x-auto">
-<div class="max-w-container-max mx-auto px-4 md:px-lg flex items-center gap-xl whitespace-nowrap scrollbar-hide">
-<!-- Filter Chip Item -->
-<button class="flex flex-col items-center gap-xs text-on-surface-variant border-b-2 border-primary pb-2 opacity-100 group transition-all">
-<span class="material-symbols-outlined text-[24px]">apartment</span>
-<span class="text-label-sm font-label-sm">Apartments</span>
-</button>
-<button class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all">
-<span class="material-symbols-outlined text-[24px]">home</span>
-<span class="text-label-sm font-label-sm">Houses</span>
-</button>
-<button class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all">
-<span class="material-symbols-outlined text-[24px]">bed</span>
-<span class="text-label-sm font-label-sm">Rooms</span>
-</button>
-<button class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all">
-<span class="material-symbols-outlined text-[24px]">cabin</span>
-<span class="text-label-sm font-label-sm">Cabins</span>
-</button>
-<button class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all">
-<span class="material-symbols-outlined text-[24px]">diamond</span>
-<span class="text-label-sm font-label-sm">Luxury</span>
-</button>
-<button class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all">
-<span class="material-symbols-outlined text-[24px]">near_me</span>
-<span class="text-label-sm font-label-sm">Near Me</span>
-</button>
-<button class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all">
-<span class="material-symbols-outlined text-[24px]">pool</span>
-<span class="text-label-sm font-label-sm">Pools</span>
-</button>
-<button class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all">
-<span class="material-symbols-outlined text-[24px]">surfing</span>
-<span class="text-label-sm font-label-sm">Beachfront</span>
-</button>
-<button class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all">
-<span class="material-symbols-outlined text-[24px]">landscape</span>
-<span class="text-label-sm font-label-sm">Mountains</span>
-</button>
-<div class="flex-grow"></div>
-<button class="flex items-center gap-sm px-md py-sm border border-outline-variant rounded-xl hover:bg-surface-container-high transition-colors font-label-md text-on-surface">
-<span class="material-symbols-outlined text-[18px]">tune</span>
-<span>Filters</span>
-</button>
-</div>
-</section>
-<!-- Property Grid -->
-<section class="max-w-container-max mx-auto px-4 md:px-lg">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-lg">
-<!-- Card 1 (Featured) -->
-<div class="property-card group cursor-pointer">
-<div class="relative aspect-square overflow-hidden rounded-xl mb-md">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 image-zoom" data-alt="A luxury Scandinavian cabin with large floor-to-ceiling windows overlooking a snow-covered valley. The interior is warm with timber walls and a modern fireplace. Photographed with soft, natural lighting in a clean, minimalist travel aesthetic featuring deep purple sunset hues in the sky." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBsW3YUSLYx6ZanU0IRfnqk1A20-_DFX2RVdGGoDT-JzLdmeRnj3MfDhD8Ab06WN7e5o9zkL-G-XBrIJsa1YwrQvRhT1Q_2wrGrK_LWxSRtmaVAH-DdRdpjFnQ4pFCwOjpDNaZCg2hM4SqKhRqOh2jvYcstMD-jM5v_Z2G0ZcXsABbyIJXxY6D8KUByoZBtlQNj71HPqV6FpchObRsnnGVnR4gTkTWe0kYNCobXoI0o-g2TRv73Ov_LrPOmTDATQSa_2y8Tqau-3EQ')"></div>
-<div class="absolute top-md left-md bg-surface-container-lowest text-on-surface px-sm py-xs rounded-lg text-label-sm font-bold shadow-sm">Featured</div>
-<button class="absolute top-md right-md p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:scale-110 transition-transform" onclick="toggleHeart(this)">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Nordic Peak Retreat</h3>
-<p class="text-on-surface-variant">Lillehammer, Norway</p>
-<p class="mt-xs text-on-surface-variant"><span class="font-bold text-on-surface">$340</span> night</p>
-</div>
-<div class="flex items-center gap-xs font-label-md">
-<span class="material-symbols-outlined text-primary filled-icon text-[18px]">star</span>
-<span>4.92</span>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="property-card group cursor-pointer">
-<div class="relative aspect-square overflow-hidden rounded-xl mb-md">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 image-zoom" data-alt="A stunning infinity pool overlooking the Mediterranean ocean at a white-walled Santorini villa. Vibrant purple bougainvillea flowers drape over the terrace. The lighting is crisp, bright Mediterranean noon, perfectly suited for a premium travel platform's light-mode design with clean lines and soft shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCf_Lhr09O0zpu7wZIU394XNgCCLcQzKpM5Kx2CrzWKShUfrV2-JfRisEmom72DmfV3IEmoN_gnBvbLugQocJouL5SYyXiPN28YahBdAgjZ4LIRD-AbxDmgEzVjIb9hLKF3o8hQAkUN9xmudiKy8VbBCAgrcsQhVROqKJ_cYscmyvgzIPUtsnUodh-lJPxh0jmYI8BxTi56POoDuJMnLg_aaQGLU84Zn-CPT4s3EprcsLpo5hmRR02f2jIPMOzdfMZRYcDvsx6pxG0')"></div>
-<button class="absolute top-md right-md p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:scale-110 transition-transform" onclick="toggleHeart(this)">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Azure Horizon Villa</h3>
-<p class="text-on-surface-variant">Oia, Greece</p>
-<p class="mt-xs text-on-surface-variant"><span class="font-bold text-on-surface">$512</span> night</p>
-</div>
-<div class="flex items-center gap-xs font-label-md">
-<span class="material-symbols-outlined text-primary filled-icon text-[18px]">star</span>
-<span>4.98</span>
-</div>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="property-card group cursor-pointer">
-<div class="relative aspect-square overflow-hidden rounded-xl mb-md">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 image-zoom" data-alt="A futuristic minimalist apartment in Tokyo with neon city lights visible through massive glass windows. The decor is sleek, using black marble and purple LED accents. The lighting is moody yet clear, captured in a sharp architectural style for a high-end SaaS travel marketplace." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZPF2zS6B4QYKb_M5nzq1VplYs4rf7h-FgNF3lTsfzKMqBhfKqwwZlhOrIIWikfmDzbyRLoJ7fZS4Wx5giduXIpPanXa19Hky7u4Dcpptp1E0hHa2hds9BaWLS5M4j-dhIFEejUss0XMdDzEXieGWk6_Fz6UZC6jEN-Wn4KXc1K2nIvFrdCrihDDWyGzwaZPzwGUMWUNH_rKJyLY1_uZ1_hGWLoRM5EYKiJD8OlWCnws61yicyMneeipoklsqMs7Wd8qSdyORhqT4')"></div>
-<button class="absolute top-md right-md p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:scale-110 transition-transform" onclick="toggleHeart(this)">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Shibuya Skyline Loft</h3>
-<p class="text-on-surface-variant">Tokyo, Japan</p>
-<p class="mt-xs text-on-surface-variant"><span class="font-bold text-on-surface">$280</span> night</p>
-</div>
-<div class="flex items-center gap-xs font-label-md">
-<span class="material-symbols-outlined text-primary filled-icon text-[18px]">star</span>
-<span>4.85</span>
-</div>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="property-card group cursor-pointer">
-<div class="relative aspect-square overflow-hidden rounded-xl mb-md">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 image-zoom" data-alt="An elegant stone farmhouse in Tuscany surrounded by golden wheat fields and cypress trees. The late afternoon sun casts long, soft shadows over the rustic terrace. The style is classic yet polished, emphasizing luxury and serenity with a sophisticated color palette of warm earth tones and purple lavender." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJJly4o-P2Gq-Rt6Lzv6Lf6lTKeAH7Av9PTQUMsOWnTwTLaFC798oSM0ILOagg--ddRMLBpXpAfOe9lnrXrCYKJqwabmgsgLA4pJU--jQOHVULak8okbmEtJZDw36Yx1KBu3NsW2i6LEbvXPnxMc2ROHNWhsSZXL2VG9FXmOWYlSmC7cukp609YfLW_gN0I_aeqtDW6EW6D9dlyg2pFGOQBPvpFmpAurF04HP1NBD2kQsw1bEGSlevTf9Z0xKPD-pm2c9w6bW6Vu8')"></div>
-<button class="absolute top-md right-md p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:scale-110 transition-transform" onclick="toggleHeart(this)">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Golden Vine Estate</h3>
-<p class="text-on-surface-variant">Siena, Italy</p>
-<p class="mt-xs text-on-surface-variant"><span class="font-bold text-on-surface">$425</span> night</p>
-</div>
-<div class="flex items-center gap-xs font-label-md">
-<span class="material-symbols-outlined text-primary filled-icon text-[18px]">star</span>
-<span>4.95</span>
-</div>
-</div>
-</div>
-<!-- More cards can go here -->
-<div class="property-card group cursor-pointer">
-<div class="relative aspect-square overflow-hidden rounded-xl mb-md">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 image-zoom" data-alt="A modern bamboo jungle house in Bali with an open-air living space and a private turquoise plunge pool. Lush tropical greenery surrounds the property. The aesthetic is organic luxury, using a palette of deep greens, rich wood, and bright white highlights, suitable for an approachable yet high-end travel platform." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA53-ILxHmg54GufjdQnmgnZ8TftTab2eQw__-AFIL4qhQWNqqCuw6Vy8oQX1Jd6iB7AMTaT2YMWucKCYg_bdwTXHjIRAKUQcWOaD8RjSzAYoftZz7hRQN5-EF61s2sZH169at8zcfuz02OCj6i8ZJoVz98Oixc-7wYASa4-2NN7je2afcCat7ZYmBjBa-vgfzYm4ZA1PDMM6oRxbj2O6436-wgLmH-SvBI-kFPlRbCbUJ_ZtA75-4UyVS779Ykaz2pCFYsas0cSOw')"></div>
-<button class="absolute top-md right-md p-2 bg-black/20 backdrop-blur-md rounded-full text-white hover:scale-110 transition-transform" onclick="toggleHeart(this)">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-<div class="flex justify-between items-start">
-<div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Eco-Zen Sanctuary</h3>
-<p class="text-on-surface-variant">Ubud, Indonesia</p>
-<p class="mt-xs text-on-surface-variant"><span class="font-bold text-on-surface">$195</span> night</p>
-</div>
-<div class="flex items-center gap-xs font-label-md">
-<span class="material-symbols-outlined text-primary filled-icon text-[18px]">star</span>
-<span>4.89</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Load More -->
-<div class="mt-xl flex flex-col items-center">
-<p class="text-on-surface-variant mb-md font-label-md">Showing 5 of 1,240 properties</p>
-<button class="bg-on-surface text-surface py-md px-xl rounded-xl font-bold hover:bg-on-surface/90 transition-all active:scale-95 shadow-md">
-                    Explore more destinations
+    <div class="max-w-container-max mx-auto px-4 md:px-lg flex justify-between items-center h-full gap-md">
+        <!-- Brand Logo -->
+        <div class="flex items-center">
+            <a class="font-display text-headline-sm font-bold text-primary dark:text-primary-fixed-dim" href="home.html">HabitTo</a>
+        </div>
+        
+        <!-- Central Search Pill (Visible on md+) -->
+        <div class="hidden md:flex flex-1 max-w-md items-center justify-between px-md py-sm border border-outline-variant rounded-full shadow-sm hover:shadow-md transition-shadow cursor-pointer bg-surface-container-lowest" onclick="focusSearch()">
+            <button class="font-label-md text-label-md px-2 border-r border-outline-variant text-on-surface">Anywhere</button>
+            <button class="font-label-md text-label-md px-2 border-r border-outline-variant text-on-surface">Any week</button>
+            <button class="font-label-md text-label-md px-2 text-on-surface-variant">Add guests</button>
+            <div class="bg-primary text-on-primary p-2 rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-[18px]">search</span>
+            </div>
+        </div>
+        
+        <!-- Navigation Links & Actions -->
+        <div class="flex items-center gap-md">
+            <div class="hidden lg:flex items-center gap-md">
+                <a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:text-primary transition-colors duration-200" href="home.html">Explore</a>
+                <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="trips.html">Trips</a>
+                <a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors duration-200" href="profile.html">Dashboard</a>
+            </div>
+            
+            <div class="flex items-center gap-sm">
+                <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors active:scale-95" id="theme-toggle">
+                    <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
                 </button>
-</div>
-</section>
+                <button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors active:scale-95">
+                    <span class="material-symbols-outlined">language</span>
+                </button>
+                
+                <!-- Profile dropdown trigger -->
+                <div class="flex items-center gap-sm border border-outline-variant rounded-full px-2 py-1 hover:shadow-md transition-shadow bg-surface-container-lowest cursor-pointer">
+                    <span class="material-symbols-outlined text-on-surface-variant">menu</span>
+                    <span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-24 pb-xl">
+    <!-- Hero Search Section -->
+    <section class="max-w-container-max mx-auto px-4 md:px-lg mb-xl">
+        <div class="relative rounded-[2rem] overflow-hidden h-[450px] flex items-center justify-center">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80')"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+            
+            <div class="relative z-10 w-full max-w-3xl px-md">
+                <h1 class="text-white font-display text-display mb-lg text-center drop-shadow-lg">Where to next?</h1>
+                
+                <!-- Expanded Search Component -->
+                <form onsubmit="handleSearch(event)" class="bg-surface-container-lowest dark:bg-inverse-surface rounded-full p-2 shadow-2xl flex flex-col md:flex-row items-center gap-2 border border-white/20">
+                    <div class="flex-1 w-full px-lg py-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-full transition-colors group cursor-pointer">
+                        <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Where</label>
+                        <input id="search-city" class="bg-transparent border-none p-0 focus:ring-0 w-full text-on-surface placeholder:text-outline font-label-md" placeholder="Search cities (e.g. Lillehammer, Oia)" type="text"/>
+                    </div>
+                    <div class="hidden md:block w-px h-10 bg-outline-variant"></div>
+                    <div class="flex-grow w-full px-lg py-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-full transition-colors cursor-pointer">
+                        <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Check in</label>
+                        <input id="search-checkin" type="date" class="bg-transparent border-none p-0 focus:ring-0 w-full text-on-surface placeholder:text-outline font-label-md focus:outline-none"/>
+                    </div>
+                    <div class="hidden md:block w-px h-10 bg-outline-variant"></div>
+                    <div class="flex-grow w-full px-lg py-md hover:bg-surface-container-low dark:hover:bg-surface-container-highest rounded-full transition-colors cursor-pointer">
+                        <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Who</label>
+                        <input id="search-guests" type="number" min="1" max="10" placeholder="Add guests" class="bg-transparent border-none p-0 focus:ring-0 w-full text-on-surface placeholder:text-outline font-label-md"/>
+                    </div>
+                    <button type="submit" class="w-full md:w-auto bg-primary text-on-primary hover:bg-primary-container px-xl py-md rounded-full font-bold flex items-center justify-center gap-sm transition-all active:scale-95 shadow-lg shrink-0">
+                        <span class="material-symbols-outlined">search</span>
+                        <span>Search</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="sticky top-20 z-40 bg-background/95 dark:bg-background/95 backdrop-blur-sm border-b border-outline-variant/20 mb-xl py-md overflow-x-auto">
+        <div class="max-w-container-max mx-auto px-4 md:px-lg flex items-center gap-xl whitespace-nowrap scrollbar-hide">
+            <!-- Filter Chip Items -->
+            <button onclick="filterByCategory('All', this)" class="flex flex-col items-center gap-xs text-primary border-b-2 border-primary pb-2 opacity-100 group transition-all category-filter-btn">
+                <span class="material-symbols-outlined text-[24px]">explore</span>
+                <span class="text-label-sm font-label-sm">All Types</span>
+            </button>
+            <button onclick="filterByCategory('Apartments', this)" class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all category-filter-btn">
+                <span class="material-symbols-outlined text-[24px]">apartment</span>
+                <span class="text-label-sm font-label-sm">Apartments</span>
+            </button>
+            <button onclick="filterByCategory('Houses', this)" class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all category-filter-btn">
+                <span class="material-symbols-outlined text-[24px]">home</span>
+                <span class="text-label-sm font-label-sm">Houses</span>
+            </button>
+            <button onclick="filterByCategory('Rooms', this)" class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all category-filter-btn">
+                <span class="material-symbols-outlined text-[24px]">bed</span>
+                <span class="text-label-sm font-label-sm">Rooms</span>
+            </button>
+            <button onclick="filterByCategory('Cabins', this)" class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all category-filter-btn">
+                <span class="material-symbols-outlined text-[24px]">cabin</span>
+                <span class="text-label-sm font-label-sm">Cabins</span>
+            </button>
+            <button onclick="filterByCategory('Luxury', this)" class="flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all category-filter-btn">
+                <span class="material-symbols-outlined text-[24px]">diamond</span>
+                <span class="text-label-sm font-label-sm">Luxury</span>
+            </button>
+            
+            <div class="flex-grow"></div>
+            <button class="flex items-center gap-sm px-md py-sm border border-outline-variant rounded-xl hover:bg-surface-container-high transition-colors font-label-md text-on-surface">
+                <span class="material-symbols-outlined text-[18px]">tune</span>
+                <span>Filters</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Property Grid -->
+    <section class="max-w-container-max mx-auto px-4 md:px-lg">
+        <div id="properties-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-lg">
+            <!-- Dynamic cards will be rendered here -->
+        </div>
+        
+        <!-- Load More -->
+        <div id="properties-load-more" class="mt-xl flex flex-col items-center">
+            <p id="showing-count-text" class="text-on-surface-variant mb-md font-label-md">Showing 0 properties</p>
+            <button class="bg-on-surface text-surface py-md px-xl rounded-xl font-bold hover:bg-on-surface/90 transition-all active:scale-95 shadow-md">
+                Explore more destinations
+            </button>
+        </div>
+    </section>
 </main>
+
 <!-- Footer -->
 <footer class="w-full bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant dark:border-white/10 mt-xl">
-<div class="max-w-container-max mx-auto px-4 md:px-lg py-xl flex flex-col md:flex-row justify-between items-center gap-md">
-<div class="flex flex-col items-center md:items-start gap-xs">
-<a class="font-display text-headline-sm font-bold text-primary" href="#">HabitTo</a>
-<p class="font-label-md text-label-md text-on-surface-variant">© 2024 HabitTo Inc. All rights reserved.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-md">
-<a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Privacy</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Terms</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Sitemap</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Company details</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Destinations</a>
-</div>
-<div class="flex items-center gap-md">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined">public</span>
-</button>
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined">share</span>
-</button>
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined">chat</span>
-</button>
-</div>
-</div>
+    <div class="max-w-container-max mx-auto px-4 md:px-lg py-xl flex flex-col md:flex-row justify-between items-center gap-md">
+        <div class="flex flex-col items-center md:items-start gap-xs">
+            <a class="font-display text-headline-sm font-bold text-primary" href="#">HabitTo</a>
+            <p class="font-label-md text-label-md text-on-surface-variant">Â© 2024 HabitTo Inc. All rights reserved.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-md">
+            <a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-opacity opacity-80" href="#">Privacy</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-opacity opacity-80" href="#">Terms</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-opacity opacity-80" href="#">Sitemap</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:underline hover:text-primary transition-opacity opacity-80" href="#">Destinations</a>
+        </div>
+        <div class="flex items-center gap-md">
+            <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">public</span>
+            </button>
+            <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">share</span>
+            </button>
+        </div>
+    </div>
 </footer>
+
 <!-- Floating Mobile Nav (Suppressed on large screens) -->
 <div class="md:hidden fixed bottom-0 left-0 right-0 glass-panel border-t border-outline-variant/30 px-md py-sm flex justify-around items-center z-50">
-<button class="flex flex-col items-center text-primary">
-<span class="material-symbols-outlined filled-icon">explore</span>
-<span class="text-[10px] font-bold">Explore</span>
-</button>
-<button class="flex flex-col items-center text-on-surface-variant">
-<span class="material-symbols-outlined">favorite</span>
-<span class="text-[10px] font-bold">Wishlist</span>
-</button>
-<button class="flex flex-col items-center text-on-surface-variant">
-<span class="material-symbols-outlined">travel</span>
-<span class="text-[10px] font-bold">Trips</span>
-</button>
-<button class="flex flex-col items-center text-on-surface-variant">
-<span class="material-symbols-outlined">account_circle</span>
-<span class="text-[10px] font-bold">Log in</span>
-</button>
+    <a href="home.html" class="flex flex-col items-center text-primary">
+        <span class="material-symbols-outlined filled-icon">explore</span>
+        <span class="text-[10px] font-bold">Explore</span>
+    </a>
+    <a href="trips.html?tab=favorites" class="flex flex-col items-center text-on-surface-variant">
+        <span class="material-symbols-outlined">favorite</span>
+        <span class="text-[10px] font-bold">Wishlist</span>
+    </a>
+    <a href="trips.html" class="flex flex-col items-center text-on-surface-variant">
+        <span class="material-symbols-outlined">travel</span>
+        <span class="text-[10px] font-bold">Trips</span>
+    </a>
+    <a href="profile.html" class="flex flex-col items-center text-on-surface-variant">
+        <span class="material-symbols-outlined">account_circle</span>
+        <span class="text-[10px] font-bold">Profile</span>
+    </a>
 </div>
+
+<!-- Load script at the end -->
+<script src="app.js"></script>
 <script>
-        // Theme Toggle Simulation
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const html = document.documentElement;
+    let activeCategory = 'All';
+    let allProperties = [];   // cache from API
+    let wishlistIds = [];     // cache from API
 
-        themeToggle.addEventListener('click', () => {
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                themeIcon.textContent = 'dark_mode';
-            } else {
-                html.classList.add('dark');
-                themeIcon.textContent = 'light_mode';
-            }
-        });
+    function focusSearch() {
+        document.getElementById('search-city').focus();
+    }
 
-        // Heart Toggle Interaction
-        function toggleHeart(button) {
-            const icon = button.querySelector('.material-symbols-outlined');
-            if (icon.classList.contains('filled-icon')) {
-                icon.classList.remove('filled-icon');
-                icon.style.fontVariationSettings = "'FILL' 0";
-                icon.style.color = "white";
-            } else {
-                icon.classList.add('filled-icon');
-                icon.style.fontVariationSettings = "'FILL' 1";
-                icon.style.color = "#ff4d4d";
-                // Simple pop animation
-                button.animate([
-                    { transform: 'scale(1)' },
-                    { transform: 'scale(1.3)' },
-                    { transform: 'scale(1)' }
-                ], { duration: 300, easing: 'ease-out' });
-            }
+    async function loadWishlist() {
+        const user = Auth.getUser();
+        if (!user) { wishlistIds = []; return; }
+        try {
+            const items = await HabittoAPI.getWishlist(user.id);
+            wishlistIds = items.map(w => w.propertyId);
+        } catch { wishlistIds = []; }
+    }
+
+    async function loadAndRenderProperties() {
+        const grid = document.getElementById('properties-grid');
+        const countText = document.getElementById('showing-count-text');
+        grid.innerHTML = `<div class="col-span-full py-xl text-center"><span class="material-symbols-outlined animate-spin text-[48px] text-primary">autorenew</span><p class="mt-md text-on-surface-variant">Loading properties...</p></div>`;
+
+        try {
+            const city = document.getElementById('search-city').value.trim() || undefined;
+            const checkin = document.getElementById('search-checkin').value || undefined;
+            allProperties = await HabittoAPI.getProperties({ city, from: checkin });
+        } catch (e) {
+            grid.innerHTML = `<div class="col-span-full py-xl text-center"><span class="material-symbols-outlined text-[48px] text-error mb-md">wifi_off</span><h3 class="font-headline-sm text-on-surface mb-xs">Cannot connect to API</h3><p class="text-on-surface-variant text-label-md">Make sure the backend is running at <code>http://localhost:8080</code>.</p></div>`;
+            countText.textContent = 'API unavailable';
+            return;
         }
 
-        // Category Selection
-        const filterButtons = document.querySelectorAll('section button[class*="flex-col"]');
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => {
-                    b.classList.remove('border-primary', 'opacity-100');
-                    b.classList.add('border-transparent', 'opacity-60');
-                });
-                btn.classList.add('border-primary', 'opacity-100');
-                btn.classList.remove('border-transparent', 'opacity-60');
-            });
+        renderProperties();
+    }
+
+    function renderProperties() {
+        const grid = document.getElementById('properties-grid');
+        const countText = document.getElementById('showing-count-text');
+
+        let list = [...allProperties];
+
+        // Frontend category filter (backend doesn't have this field yet)
+        if (activeCategory !== 'All') {
+            list = list.filter(p => (p.category || '').toLowerCase() === activeCategory.toLowerCase());
+        }
+
+        grid.innerHTML = '';
+
+        if (list.length === 0) {
+            grid.innerHTML = `
+                <div class="col-span-full py-xl text-center">
+                    <span class="material-symbols-outlined text-[64px] text-outline-variant mb-md">search_off</span>
+                    <h3 class="font-headline-sm text-on-surface mb-xs">No properties found</h3>
+                    <p class="text-on-surface-variant">Try adjusting your filters or search query.</p>
+                </div>
+            `;
+            countText.textContent = 'Showing 0 properties';
+            return;
+        }
+
+        list.forEach(p => {
+            const isFav = wishlistIds.includes(p.id);
+            const images = p.images || ['https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80'];
+            const card = document.createElement('div');
+            card.className = 'property-card group cursor-pointer';
+            card.innerHTML = `
+                <div class="relative aspect-square overflow-hidden rounded-xl mb-md">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 image-zoom" style="background-image: url('${images[0]}')"></div>
+                    <div class="absolute top-md left-md bg-surface-container-lowest text-on-surface px-sm py-xs rounded-lg text-label-sm font-bold shadow-sm">${p.category || 'Property'}</div>
+                    <button class="absolute top-md right-md p-2 bg-black/30 backdrop-blur-md rounded-full text-white hover:scale-110 transition-transform z-10" onclick="toggleHeart(event, '${p.id}', this)">
+                        <span class="material-symbols-outlined ${isFav ? 'filled-icon text-red-400' : ''}" style="${isFav ? "font-variation-settings:'FILL' 1" : ''}">favorite</span>
+                    </button>
+                </div>
+                <div onclick="navigateToDetail('${p.id}')" class="flex justify-between items-start cursor-pointer">
+                    <div>
+                        <h3 class="font-headline-sm text-headline-sm text-on-surface truncate w-48">${p.title}</h3>
+                        <p class="text-on-surface-variant">${p.city}</p>
+                        <p class="mt-xs text-on-surface-variant"><span class="font-bold text-on-surface">$${p.nightlyRate}</span> night</p>
+                    </div>
+                    <div class="flex items-center gap-xs font-label-md">
+                        <span class="material-symbols-outlined text-primary filled-icon text-[18px]">star</span>
+                        <span>${p.rating || '5.0'}</span>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
         });
 
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('h-16', 'shadow-md');
-                nav.classList.remove('h-20', 'shadow-sm');
+        countText.textContent = `Showing ${list.length} properties`;
+    }
+
+    async function toggleHeart(e, propertyId, button) {
+        e.stopPropagation();
+        const user = Auth.getUser();
+        if (!user) {
+            HabittoUI.toggleAuthModal(true, 'login');
+            return;
+        }
+
+        const icon = button.querySelector('.material-symbols-outlined');
+        const isFav = wishlistIds.includes(propertyId);
+
+        try {
+            if (isFav) {
+                await HabittoAPI.removeFromWishlist(user.id, propertyId);
+                wishlistIds = wishlistIds.filter(id => id !== propertyId);
+                icon.classList.remove('filled-icon', 'text-red-400');
+                icon.style.fontVariationSettings = "'FILL' 0";
             } else {
-                nav.classList.add('h-20', 'shadow-sm');
-                nav.classList.remove('h-16', 'shadow-md');
+                await HabittoAPI.addToWishlist(user.id, propertyId);
+                wishlistIds.push(propertyId);
+                icon.classList.add('filled-icon', 'text-red-400');
+                icon.style.fontVariationSettings = "'FILL' 1";
+                button.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.3)' }, { transform: 'scale(1)' }], { duration: 300, easing: 'ease-out' });
             }
+        } catch (err) {
+            alert('Could not update wishlist: ' + err.message);
+        }
+    }
+
+    function filterByCategory(category, btn) {
+        activeCategory = category;
+        document.querySelectorAll('.category-filter-btn').forEach(b => {
+            b.className = 'flex flex-col items-center gap-xs text-on-surface-variant opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-outline-variant pb-2 group transition-all category-filter-btn';
         });
-    </script>
-</body></html>
+        btn.className = 'flex flex-col items-center gap-xs text-primary border-b-2 border-primary pb-2 opacity-100 group transition-all category-filter-btn';
+        renderProperties();
+    }
+
+    async function handleSearch(e) {
+        e.preventDefault();
+        await loadAndRenderProperties();
+    }
+
+    function navigateToDetail(id) {
+        const checkin = document.getElementById('search-checkin').value;
+        const guests = document.getElementById('search-guests').value;
+        let url = `details.html?id=${id}`;
+        if (checkin) url += `&checkIn=${checkin}`;
+        if (guests) url += `&guests=${guests}`;
+        window.location.href = url;
+    }
+
+    window.addEventListener('DOMContentLoaded', async () => {
+        await loadWishlist();
+        await loadAndRenderProperties();
+    });
+</script>
+</body>
+</html>
+
